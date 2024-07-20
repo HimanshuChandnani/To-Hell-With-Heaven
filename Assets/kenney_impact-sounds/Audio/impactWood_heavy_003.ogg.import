@@ -2,7 +2,11 @@
 
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
+<<<<<<< HEAD
 uid="uid://c0i13q2du1v4o"
+=======
+uid="uid://dg34kot5f1su1"
+>>>>>>> 41b417b765c9e0a692394af8900cdbe176b7f2a2
 path="res://.godot/imported/impactWood_heavy_003.ogg-d7d81c426cf21bbe6078510076320e06.oggvorbisstr"
 
 [deps]

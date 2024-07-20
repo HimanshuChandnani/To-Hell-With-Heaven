@@ -2,7 +2,11 @@
 
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
+<<<<<<< HEAD
 uid="uid://bfib02mxv6oo7"
+=======
+uid="uid://w2kg0re26f05"
+>>>>>>> 41b417b765c9e0a692394af8900cdbe176b7f2a2
 path="res://.godot/imported/footstep_snow_004.ogg-8538a6149ac88bad56c9cbaffe630b0d.oggvorbisstr"
 
 [deps]

@@ -2,7 +2,11 @@
 
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
+<<<<<<< HEAD
 uid="uid://dyyyx4va55xg6"
+=======
+uid="uid://vlr2it0rjerc"
+>>>>>>> 41b417b765c9e0a692394af8900cdbe176b7f2a2
 path="res://.godot/imported/impactPlank_medium_000.ogg-3e468beba2ed35392c11998549e8a8fa.oggvorbisstr"
 
 [deps]

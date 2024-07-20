@@ -2,7 +2,11 @@
 
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
+<<<<<<< HEAD
 uid="uid://crmal00ktfejq"
+=======
+uid="uid://r6m6jsprhugo"
+>>>>>>> 41b417b765c9e0a692394af8900cdbe176b7f2a2
 path="res://.godot/imported/footstep_grass_003.ogg-b6314042ab3663e5968ca679ea61d28f.oggvorbisstr"
 
 [deps]
