@@ -14,6 +14,7 @@ extends Node2D
 @onready var third_timer = $Camera/ThirdTimer
 @onready var bike = $Camera/Bike
 @onready var bike_timer = $Camera/BikeTimer
+@onready var title_song = $Camera/TitleSong
 
 var start = 1
 
@@ -27,9 +28,10 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("Enter"):
 		start = 2
 		first_timer.start()
-		title.text = "To Hell
+		title.text = '''To Hell
 
-(Ft. Heaven)"
+(Ft. Heaven)'''
+		title_song.playing = false
 	if start == 2:
 		camera.position.y += 2
 	if start == 3:
