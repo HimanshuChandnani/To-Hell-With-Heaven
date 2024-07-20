@@ -15,6 +15,9 @@ extends Node2D
 @onready var bike = $Camera/Bike
 @onready var bike_timer = $Camera/BikeTimer
 @onready var title_song = $Camera/TitleSong
+@onready var bike_timer_2 = $Camera/BikeTimer2
+@onready var bike_2 = $Camera/Bike2
+@onready var hell_biker_2 = $HellBiker2
 
 var start = 1
 
@@ -25,6 +28,7 @@ func _on_timer_timeout():
 		subtitle.visible = true
 
 func _physics_process(delta):
+	print(start)
 	if Input.is_action_just_pressed("Enter"):
 		start = 2
 		first_timer.start()
@@ -40,6 +44,9 @@ func _physics_process(delta):
 		camera.position.y += 2
 	if start == 5:
 		hell_biker.position.x -= 5
+		hell_biker_2.position.x -= 4
+		bike.panning_strength += 1
+		bike_2.panning_strength += 1
 	if start == 6:
 		camera.position.y -= 10
 
@@ -51,6 +58,7 @@ func _on_rotation_timer_timeout():
 	start = 4
 	second_timer.start()
 	bike_timer.start()
+	bike_timer_2.start()
 
 func _on_second_timer_timeout():
 	start = 5
@@ -69,3 +77,6 @@ func _on_third_timer_timeout():
 
 func _on_bike_timer_timeout():
 	bike.play()
+
+func _on_bike_timer_2_timeout():
+	bike_2.play()
