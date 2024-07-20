@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bdkenpriqp353"
+path="res://.godot/imported/Lost in the Echoes Part 1.mp3-ed6a1102f12e091a201549453d9686e2.mp3str"
+
+[deps]
+
+source_file="res://Assets/Lost in the Echoes Part 1.mp3"
+dest_files=["res://.godot/imported/Lost in the Echoes Part 1.mp3-ed6a1102f12e091a201549453d9686e2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

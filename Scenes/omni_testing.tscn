@@ -1,16 +1,20 @@
-[gd_scene load_steps=14 format=3 uid="uid://pauin7ou8ls0"]
+[gd_scene load_steps=18 format=3 uid="uid://pauin7ou8ls0"]
 
 [ext_resource type="Script" path="res://Scripts/omni_testing.gd" id="1_jdgsa"]
 [ext_resource type="FontFile" uid="uid://wrhjvjqaotxp" path="res://Assets/kenney_kenney-fonts/Fonts/Kenney High.ttf" id="1_nur6c"]
-[ext_resource type="AudioStream" uid="uid://b41aqlfotjno8" path="res://Assets/Bike SFX.mp3" id="2_pp1km"]
+[ext_resource type="AudioStream" path="res://Assets/Bike SFX.mp3" id="2_pp1km"]
 [ext_resource type="PackedScene" uid="uid://b2lstkgrdmac5" path="res://Scenes/friend.tscn" id="3_8f6g6"]
 [ext_resource type="AudioStream" uid="uid://c5ua2t134oo8j" path="res://Assets/Title Song.mp3" id="3_015fm"]
+[ext_resource type="AudioStream" uid="uid://cio6liuy4wf2x" path="res://Assets/Heaven Tune.mp3" id="4_erqeg"]
+[ext_resource type="AudioStream" uid="uid://bdkenpriqp353" path="res://Assets/Lost in the Echoes Part 1.mp3" id="5_5h4aa"]
+[ext_resource type="AudioStream" uid="uid://bd0jjjpd6hos1" path="res://Assets/Slide Whistle.mp3" id="5_a2d55"]
 [ext_resource type="PackedScene" uid="uid://bpfjf0jh1lryf" path="res://Scenes/cloud_ground.tscn" id="5_mx5or"]
 [ext_resource type="Texture2D" uid="uid://berbft0qxf212" path="res://Assets/kenney_platformer-art-pixel-redux/Tilemap/tilemap.png" id="6_6o6ik"]
+[ext_resource type="AudioStream" uid="uid://db5fntmv1k0x7" path="res://Assets/Lost in the Echoes Part 2.mp3" id="6_s6w5c"]
 [ext_resource type="Texture2D" uid="uid://411hggfbu85k" path="res://Assets/kenney_pixel-vehicle-pack/PNG/Characters/heaven_man.png" id="6_vhvum"]
 [ext_resource type="Texture2D" uid="uid://d3sxeq0grudgd" path="res://Assets/kenney_pixel-vehicle-pack/PNG/Characters/heaven_npc.png" id="7_xre60"]
 [ext_resource type="PackedScene" uid="uid://b06wuap0825jc" path="res://Scenes/hell_biker.tscn" id="8_4wleu"]
-[ext_resource type="PackedScene" path="res://Scenes/hell_biker_2.tscn" id="11_vthi6"]
+[ext_resource type="PackedScene" uid="uid://d0bvvfksr0iwx" path="res://Scenes/hell_biker_2.tscn" id="11_vthi6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6ekr4"]
 texture = ExtResource("6_6o6ik")
@@ -1777,7 +1781,7 @@ wait_time = 1.8
 one_shot = true
 
 [node name="RotationTimer" type="Timer" parent="Camera"]
-wait_time = 0.9
+wait_time = 0.45
 one_shot = true
 
 [node name="SecondTimer" type="Timer" parent="Camera"]
@@ -1792,14 +1796,6 @@ one_shot = true
 wait_time = 1.05
 one_shot = true
 
-[node name="Bike" type="AudioStreamPlayer2D" parent="Camera"]
-stream = ExtResource("2_pp1km")
-panning_strength = 0.0
-
-[node name="Bike2" type="AudioStreamPlayer2D" parent="Camera"]
-stream = ExtResource("2_pp1km")
-panning_strength = 0.0
-
 [node name="BikeTimer" type="Timer" parent="Camera"]
 wait_time = 4.25
 one_shot = true
@@ -1811,6 +1807,24 @@ autoplay = true
 [node name="BikeTimer2" type="Timer" parent="Camera"]
 wait_time = 4.35
 one_shot = true
+
+[node name="HeavenTune" type="AudioStreamPlayer2D" parent="Camera"]
+stream = ExtResource("4_erqeg")
+bus = &"Music"
+
+[node name="SlideWhistle" type="AudioStreamPlayer2D" parent="Camera"]
+stream = ExtResource("5_a2d55")
+bus = &"SFX"
+
+[node name="TuneTimer" type="Timer" parent="Camera"]
+wait_time = 6.0
+one_shot = true
+
+[node name="HellTune1" type="AudioStreamPlayer2D" parent="Camera"]
+stream = ExtResource("5_5h4aa")
+
+[node name="HellTune2" type="AudioStreamPlayer2D" parent="Camera"]
+stream = ExtResource("6_s6w5c")
 
 [node name="Title" type="Label" parent="."]
 z_index = 1
@@ -1882,9 +1896,18 @@ z_index = 1
 position = Vector2(182, 897)
 rotation = 0.349066
 
+[node name="Bike2" type="AudioStreamPlayer2D" parent="HellBiker"]
+position = Vector2(-477.816, -780.657)
+rotation = -0.349066
+stream = ExtResource("2_pp1km")
+
 [node name="HellBiker2" parent="." instance=ExtResource("11_vthi6")]
 z_index = 1
 position = Vector2(198, 898.5)
+
+[node name="Bike3" type="AudioStreamPlayer2D" parent="HellBiker2"]
+position = Vector2(-198, -898.5)
+stream = ExtResource("2_pp1km")
 
 [connection signal="timeout" from="Camera/FirstTimer" to="." method="_on_first_timer_timeout"]
 [connection signal="timeout" from="Camera/RotationTimer" to="." method="_on_rotation_timer_timeout"]
@@ -1893,4 +1916,5 @@ position = Vector2(198, 898.5)
 [connection signal="timeout" from="Camera/ThirdTimer" to="." method="_on_third_timer_timeout"]
 [connection signal="timeout" from="Camera/BikeTimer" to="." method="_on_bike_timer_timeout"]
 [connection signal="timeout" from="Camera/BikeTimer2" to="." method="_on_bike_timer_2_timeout"]
+[connection signal="timeout" from="Camera/TuneTimer" to="." method="_on_tune_timer_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
