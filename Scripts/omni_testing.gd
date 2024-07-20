@@ -28,12 +28,14 @@ extends Node2D
 var start = 1
 var tune_1_play = false
 var tune_2_play = false
+var enter = false
 
 func _physics_process(delta):
 	if tune_1_play == true and hell_tune_1.playing == false and tune_2_play == false:
 		hell_tune_2.play()
 		tune_2_play = true
-	if Input.is_action_just_pressed("Enter"):
+	if Input.is_action_just_pressed("Enter") and enter == false:
+		enter = true
 		start = 2
 		first_timer.start()
 		heaven_tune.play()
