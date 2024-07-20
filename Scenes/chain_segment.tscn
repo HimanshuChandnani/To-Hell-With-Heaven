@@ -7,8 +7,8 @@ radius = 1.0
 height = 4.0
 
 [node name="Chain segment" type="RigidBody2D"]
-collision_layer = 2
-collision_mask = 2
+collision_layer = 0
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_33j2j")
