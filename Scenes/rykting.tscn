@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8bvldkbxylaw"]
+
+[ext_resource type="PackedScene" uid="uid://c1cro03s0c3gj" path="res://Scenes/player.tscn" id="1_plg27"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_a60oo"]
+distance = -9.0
+
+[node name="Rykting" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_plg27")]
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(2, 2)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("WorldBoundaryShape2D_a60oo")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-22, 9, 29, 9, 29, 4, -22, 4)

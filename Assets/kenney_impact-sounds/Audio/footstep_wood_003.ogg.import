@@ -2,7 +2,11 @@
 
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
+<<<<<<< HEAD
+uid="uid://6tntupasb5h5"
+=======
 uid="uid://dwkl5pw48x50g"
+>>>>>>> 41b417b765c9e0a692394af8900cdbe176b7f2a2
 path="res://.godot/imported/footstep_wood_003.ogg-1c3404fd2c40532fa7491d87e3f8ccb0.oggvorbisstr"
 
 [deps]
