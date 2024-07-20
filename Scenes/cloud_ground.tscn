@@ -1,0 +1,137 @@
+[gd_scene load_steps=2 format=3 uid="uid://ncdxrr4h2yxy"]
+
+[ext_resource type="Texture2D" uid="uid://cnfunrdn0kaml" path="res://Assets/kenney_background-elements/Spritesheet/clouds2.png" id="1_tayfv"]
+
+[node name="CloudGround" type="Node2D"]
+
+[node name="Clouds2" type="Sprite2D" parent="."]
+position = Vector2(0, 3.1)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("1_tayfv")
+
+[node name="Clouds3" type="Sprite2D" parent="."]
+position = Vector2(30, 3.1)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("1_tayfv")
+flip_h = true
+
+[node name="Clouds4" type="Sprite2D" parent="."]
+position = Vector2(-59.985, 3.1)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("1_tayfv")
+
+[node name="Clouds5" type="Sprite2D" parent="."]
+position = Vector2(-29.985, 3.1)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("1_tayfv")
+flip_h = true
+
+[node name="Clouds6" type="Sprite2D" parent="."]
+position = Vector2(60.015, 3.1)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("1_tayfv")
+
+[node name="Clouds7" type="Sprite2D" parent="."]
+position = Vector2(90.015, 3.1)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("1_tayfv")
+flip_h = true
+
+[node name="Clouds8" type="Sprite2D" parent="."]
+position = Vector2(-180, 3.1)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("1_tayfv")
+
+[node name="Clouds9" type="Sprite2D" parent="."]
+position = Vector2(-150, 3.1)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("1_tayfv")
+flip_h = true
+
+[node name="Clouds10" type="Sprite2D" parent="."]
+position = Vector2(-239.985, 3.1)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("1_tayfv")
+
+[node name="Clouds11" type="Sprite2D" parent="."]
+position = Vector2(-209.985, 3.1)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("1_tayfv")
+flip_h = true
+
+[node name="Clouds12" type="Sprite2D" parent="."]
+position = Vector2(-119.985, 3.1)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("1_tayfv")
+
+[node name="Clouds13" type="Sprite2D" parent="."]
+position = Vector2(-89.985, 3.1)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("1_tayfv")
+flip_h = true
+
+[node name="Clouds14" type="Sprite2D" parent="."]
+position = Vector2(360, 3.1)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("1_tayfv")
+
+[node name="Clouds15" type="Sprite2D" parent="."]
+position = Vector2(390, 3.1)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("1_tayfv")
+flip_h = true
+
+[node name="Clouds16" type="Sprite2D" parent="."]
+position = Vector2(300.015, 3.1)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("1_tayfv")
+
+[node name="Clouds17" type="Sprite2D" parent="."]
+position = Vector2(330.015, 3.1)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("1_tayfv")
+flip_h = true
+
+[node name="Clouds18" type="Sprite2D" parent="."]
+position = Vector2(420.015, 3.1)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("1_tayfv")
+
+[node name="Clouds19" type="Sprite2D" parent="."]
+position = Vector2(450.015, 3.1)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("1_tayfv")
+flip_h = true
+
+[node name="Clouds20" type="Sprite2D" parent="."]
+position = Vector2(180, 3.1)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("1_tayfv")
+
+[node name="Clouds21" type="Sprite2D" parent="."]
+position = Vector2(210, 3.1)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("1_tayfv")
+flip_h = true
+
+[node name="Clouds22" type="Sprite2D" parent="."]
+position = Vector2(120.015, 3.1)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("1_tayfv")
+
+[node name="Clouds23" type="Sprite2D" parent="."]
+position = Vector2(150.015, 3.1)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("1_tayfv")
+flip_h = true
+
+[node name="Clouds24" type="Sprite2D" parent="."]
+position = Vector2(240.015, 3.1)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("1_tayfv")
+
+[node name="Clouds25" type="Sprite2D" parent="."]
+position = Vector2(270.015, 3.1)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("1_tayfv")
+flip_h = true

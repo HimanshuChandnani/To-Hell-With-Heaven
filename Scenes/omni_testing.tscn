@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://pauin7ou8ls0"]
+[gd_scene load_steps=6 format=3 uid="uid://pauin7ou8ls0"]
 
 [ext_resource type="Script" path="res://Scripts/omni_testing.gd" id="1_jdgsa"]
 [ext_resource type="FontFile" uid="uid://wrhjvjqaotxp" path="res://Assets/kenney_kenney-fonts/Fonts/Kenney High.ttf" id="1_nur6c"]
 [ext_resource type="PackedScene" uid="uid://b2lstkgrdmac5" path="res://Scenes/friend.tscn" id="3_8f6g6"]
 [ext_resource type="PackedScene" uid="uid://c1cro03s0c3gj" path="res://Scenes/player.tscn" id="4_p8p5p"]
+[ext_resource type="PackedScene" uid="uid://ncdxrr4h2yxy" path="res://Scenes/cloud_ground.tscn" id="5_mx5or"]
 
 [node name="omniTesting" type="Node2D"]
 script = ExtResource("1_jdgsa")
@@ -43,5 +44,8 @@ position = Vector2(-53, 190)
 
 [node name="Player" parent="." instance=ExtResource("4_p8p5p")]
 position = Vector2(-40, 190)
+
+[node name="CloudGround" parent="." instance=ExtResource("5_mx5or")]
+position = Vector2(-39, 186)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
