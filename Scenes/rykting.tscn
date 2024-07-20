@@ -1,21 +1,49 @@
-[gd_scene load_steps=3 format=3 uid="uid://b8bvldkbxylaw"]
+[gd_scene load_steps=5 format=3 uid="uid://b8bvldkbxylaw"]
 
 [ext_resource type="PackedScene" uid="uid://c1cro03s0c3gj" path="res://Scenes/player.tscn" id="1_plg27"]
+[ext_resource type="PackedScene" uid="uid://7b5dl6y2d8eo" path="res://Scenes/chain.tscn" id="2_j78vf"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_a60oo"]
 distance = -9.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_parny"]
+size = Vector2(32, 8)
+
 [node name="Rykting" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_plg27")]
+collision_layer = 0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(2, 2)
+zoom = Vector2(4, 4)
+position_smoothing_speed = 30.0
+drag_vertical_enabled = true
+drag_top_margin = 1.0
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 8)
 shape = SubResource("WorldBoundaryShape2D_a60oo")
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(-22, 9, 29, 9, 29, 4, -22, 4)
+
+[node name="Chain RigidBody2D" type="RigidBody2D" parent="."]
+
+[node name="Chain" parent="Chain RigidBody2D" instance=ExtResource("2_j78vf")]
+position = Vector2(-2, -2)
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chain RigidBody2D"]
+visible = false
+position = Vector2(-19, -6)
+shape = SubResource("RectangleShape2D_parny")
+disabled = true
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2(-2, -2)
+node_a = NodePath("../Player")
+node_b = NodePath("../Chain RigidBody2D")
+angular_limit_lower = 0.523599
+angular_limit_upper = 0.523599
