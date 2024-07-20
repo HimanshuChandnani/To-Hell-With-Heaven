@@ -20,7 +20,6 @@ func _physics_process(delta):
 	
 	# Slow down
 	var slow = 1
-	print(position.distance_to(ball.global_position))
 	if position.distance_to(ball.global_position) > 25:
 		slow = 2
 	# Add the gravity.
@@ -40,5 +39,12 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
 	if direction < 0:
-		$'.'.flip_h = true
+		$Sprite2D.flip_h = true
+	else:
+		$Sprite2D.flip_h = false
+	if direction == 0:
+		$Sprite2D.play('idle')
+	else:
+		$Sprite2D.play('walk')
+		
 	move_and_slide()
