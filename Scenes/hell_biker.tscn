@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b06wuap0825jc"]
+
+[ext_resource type="Texture2D" uid="uid://i73kbtbn48rc" path="res://Assets/kenney_pixel-vehicle-pack/PNG/Characters/hell_man_cycle.png" id="1_fwbhk"]
+[ext_resource type="Texture2D" uid="uid://dnq1w4gbwpbsx" path="res://Assets/kenney_pixel-vehicle-pack/PNG/Cars/hell_cycle.png" id="2_pttvq"]
+
+[node name="HellBiker" type="CharacterBody2D"]
+position = Vector2(0, -5)
+
+[node name="Biker" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(2, -3)
+texture = ExtResource("1_fwbhk")
+flip_h = true
+
+[node name="Bike" type="Sprite2D" parent="."]
+texture = ExtResource("2_pttvq")
+flip_h = true
