@@ -21,7 +21,7 @@ func _physics_process(delta):
 		$"../Chain/PinJoint2D7".softness = 0
 		# Mouse movement
 		var mousePosition = get_global_mouse_position()
-		#print(mousePosition)
+		#mousePosition.normalized()
 		#print(position.angle_to_point(mousePosition))
 		$Label.rotation = position.angle_to_point(mousePosition)
 		if Input.is_action_just_pressed("left click"):
