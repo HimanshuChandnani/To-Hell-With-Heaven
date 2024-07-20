@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://ddeu3ktqtwmxi"]
+[gd_scene load_steps=6 format=3 uid="uid://c1cro03s0c3gj"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_1cgkf"]
 [ext_resource type="Texture2D" uid="uid://bibf53b2jylea" path="res://Assets/kenney_pixel-vehicle-pack/PNG/Characters/man_walk1.png" id="2_up8k7"]
