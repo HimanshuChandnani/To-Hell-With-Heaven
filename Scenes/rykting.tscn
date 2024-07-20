@@ -47,7 +47,7 @@ rotation = 1.5708
 position = Vector2(0.000102997, 28)
 collision_layer = 2
 collision_mask = 2
-mass = 1.1
+mass = 10.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Chain/Ball"]
 scale = Vector2(0.603719, 0.603719)
