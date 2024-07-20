@@ -1,15 +1,47 @@
-[gd_scene format=3 uid="uid://pauin7ou8ls0"]
+[gd_scene load_steps=5 format=3 uid="uid://pauin7ou8ls0"]
+
+[ext_resource type="Script" path="res://Scripts/omni_testing.gd" id="1_jdgsa"]
+[ext_resource type="FontFile" uid="uid://wrhjvjqaotxp" path="res://Assets/kenney_kenney-fonts/Fonts/Kenney High.ttf" id="1_nur6c"]
+[ext_resource type="PackedScene" uid="uid://b2lstkgrdmac5" path="res://Scenes/friend.tscn" id="3_8f6g6"]
+[ext_resource type="PackedScene" uid="uid://c1cro03s0c3gj" path="res://Scenes/player.tscn" id="4_p8p5p"]
 
 [node name="omniTesting" type="Node2D"]
+script = ExtResource("1_jdgsa")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
 
-[node name="Label" type="Label" parent="."]
+[node name="Title" type="Label" parent="."]
 offset_left = -52.0
-offset_top = -26.0
+offset_top = -30.0
 offset_right = 52.0
-offset_bottom = 26.0
+offset_bottom = 30.0
+theme_override_fonts/font = ExtResource("1_nur6c")
 text = "To Hell
+
 (Ft. Heaven)"
 horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Subtitle" type="Label" parent="."]
+offset_left = -56.0
+offset_top = 57.0
+offset_right = 56.0
+offset_bottom = 81.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_nur6c")
+text = "Press ENTER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="Friend" parent="." instance=ExtResource("3_8f6g6")]
+position = Vector2(-53, 190)
+
+[node name="Player" parent="." instance=ExtResource("4_p8p5p")]
+position = Vector2(-40, 190)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
