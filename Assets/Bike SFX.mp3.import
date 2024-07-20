@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b41aqlfotjno8"
+path="res://.godot/imported/Bike SFX.mp3-1fa75600babceb08e36714e19349a9cd.mp3str"
+
+[deps]
+
+source_file="res://Assets/Bike SFX.mp3"
+dest_files=["res://.godot/imported/Bike SFX.mp3-1fa75600babceb08e36714e19349a9cd.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
