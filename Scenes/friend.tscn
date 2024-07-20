@@ -1,9 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://b2lstkgrdmac5"]
+[gd_scene load_steps=3 format=3 uid="uid://b2lstkgrdmac5"]
 
 [ext_resource type="Texture2D" uid="uid://caufwfk3a6eey" path="res://Assets/kenney_pixel-vehicle-pack/PNG/Characters/heaven_friend.png" id="1_epukb"]
+[ext_resource type="Texture2D" uid="uid://dcaureo8uu4y3" path="res://Assets/Lollipop.png" id="2_4rjey"]
 
 [node name="Friend" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -7.5)
 texture = ExtResource("1_epukb")
+
+[node name="Lollipop" type="Sprite2D" parent="."]
+position = Vector2(5, -11)
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("2_4rjey")
