@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/omni_testing.gd" id="1_jdgsa"]
 [ext_resource type="FontFile" uid="uid://wrhjvjqaotxp" path="res://Assets/kenney_kenney-fonts/Fonts/Kenney High.ttf" id="1_nur6c"]
 [ext_resource type="AudioStream" uid="uid://b41aqlfotjno8" path="res://Assets/Bike SFX.mp3" id="2_pp1km"]
-[ext_resource type="PackedScene" path="res://Scenes/friend.tscn" id="3_8f6g6"]
+[ext_resource type="PackedScene" uid="uid://b2lstkgrdmac5" path="res://Scenes/friend.tscn" id="3_8f6g6"]
 [ext_resource type="AudioStream" uid="uid://c5ua2t134oo8j" path="res://Assets/Title Song.mp3" id="3_015fm"]
 [ext_resource type="PackedScene" uid="uid://bpfjf0jh1lryf" path="res://Scenes/cloud_ground.tscn" id="5_mx5or"]
 [ext_resource type="Texture2D" uid="uid://berbft0qxf212" path="res://Assets/kenney_platformer-art-pixel-redux/Tilemap/tilemap.png" id="6_6o6ik"]
