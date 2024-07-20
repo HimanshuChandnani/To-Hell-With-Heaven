@@ -12,23 +12,32 @@ extends Node2D
 @onready var hell_biker = $HellBiker
 @onready var wait_timer = $Camera/WaitTimer
 @onready var third_timer = $Camera/ThirdTimer
-@onready var bike = $Camera/Bike
 @onready var bike_timer = $Camera/BikeTimer
 @onready var title_song = $Camera/TitleSong
 @onready var bike_timer_2 = $Camera/BikeTimer2
-@onready var bike_2 = $Camera/Bike2
 @onready var hell_biker_2 = $HellBiker2
 @onready var test_timer = $Camera/TestTimer
 @onready var heaven_tune = $Camera/HeavenTune
 @onready var slide_whistle = $Camera/SlideWhistle
+@onready var tune_timer = $Camera/TuneTimer
+@onready var bike = $HellBiker/Bike2
+@onready var bike_2 = $HellBiker2/Bike3
+@onready var hell_tune_1 = $Camera/HellTune1
+@onready var hell_tune_2 = $Camera/HellTune2
 
 var start = 1
+var tune_1_play = false
+var tune_2_play = false
 
 func _physics_process(delta):
+	if tune_1_play == true and hell_tune_1.playing == false and tune_2_play == false:
+		hell_tune_2.play()
+		tune_2_play = true
 	if Input.is_action_just_pressed("Enter"):
 		start = 2
 		first_timer.start()
 		heaven_tune.play()
+		tune_timer.start()
 		title.text = '''To Hell
 
 (Ft. Heaven)'''
@@ -42,8 +51,6 @@ func _physics_process(delta):
 	if start == 5:
 		hell_biker.position.x -= 5
 		hell_biker_2.position.x -= 4
-		bike.panning_strength = 3
-		bike_2.panning_strength = 3
 	if start == 6:
 		camera.position.y -= 10
 
@@ -84,3 +91,7 @@ func _on_timer_timeout():
 		subtitle.visible = false
 	elif subtitle.visible == false and start == 1:
 		subtitle.visible = true
+
+func _on_tune_timer_timeout():
+	hell_tune_1.play()
+	tune_1_play = true
