@@ -1,0 +1,85 @@
+[gd_scene load_steps=6 format=3 uid="uid://7b5dl6y2d8eo"]
+
+[ext_resource type="Script" path="res://Scripts/Ball.gd" id="1_cjdce"]
+[ext_resource type="Texture2D" uid="uid://r3hqbfltc1vh" path="res://Assets/kenney_1-bit-input-prompts-pixel-16/Tiles (Black)/tile_0390.png" id="2_aj3s2"]
+[ext_resource type="PackedScene" uid="uid://cu8v53ma32qed" path="res://Scenes/chain_segment.tscn" id="2_f5h68"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0ps5"]
+size = Vector2(2, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_krkkw"]
+radius = 3.16228
+
+[node name="Chain" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_u0ps5")
+
+[node name="PinJoint2D1" type="PinJoint2D" parent="."]
+node_a = NodePath("../StaticBody2D")
+node_b = NodePath("../Chain segment")
+
+[node name="Ball" type="RigidBody2D" parent="."]
+script = ExtResource("1_cjdce")
+
+[node name="ball img" type="Sprite2D" parent="Ball"]
+position = Vector2(0, 28)
+scale = Vector2(0.625, 0.625)
+texture = ExtResource("2_aj3s2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
+position = Vector2(0, 28)
+shape = SubResource("CircleShape2D_krkkw")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2(0, 24)
+node_a = NodePath("../Chain segment6")
+node_b = NodePath("../Ball")
+
+[node name="Chain segment" parent="." instance=ExtResource("2_f5h68")]
+position = Vector2(0, 2)
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="."]
+position = Vector2(0, 4)
+node_a = NodePath("../Chain segment")
+node_b = NodePath("../Chain segment2")
+
+[node name="Chain segment2" parent="." instance=ExtResource("2_f5h68")]
+position = Vector2(0, 6)
+
+[node name="PinJoint2D3" type="PinJoint2D" parent="."]
+position = Vector2(0, 8)
+node_a = NodePath("../Chain segment2")
+node_b = NodePath("../Chain segment3")
+
+[node name="Chain segment3" parent="." instance=ExtResource("2_f5h68")]
+position = Vector2(0, 10)
+
+[node name="PinJoint2D4" type="PinJoint2D" parent="."]
+position = Vector2(0, 12)
+node_a = NodePath("../Chain segment3")
+node_b = NodePath("../Chain segment4")
+
+[node name="Chain segment4" parent="." instance=ExtResource("2_f5h68")]
+position = Vector2(0, 14)
+
+[node name="PinJoint2D5" type="PinJoint2D" parent="."]
+position = Vector2(0, 16)
+node_a = NodePath("../Chain segment4")
+node_b = NodePath("../Chain segment5")
+
+[node name="Chain segment5" parent="." instance=ExtResource("2_f5h68")]
+position = Vector2(0, 18)
+
+[node name="PinJoint2D6" type="PinJoint2D" parent="."]
+position = Vector2(0, 20)
+node_a = NodePath("../Chain segment5")
+node_b = NodePath("../Chain segment6")
+
+[node name="Chain segment6" parent="." instance=ExtResource("2_f5h68")]
+position = Vector2(0, 22)
