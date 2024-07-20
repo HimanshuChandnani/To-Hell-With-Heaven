@@ -18,20 +18,17 @@ extends Node2D
 @onready var bike_timer_2 = $Camera/BikeTimer2
 @onready var bike_2 = $Camera/Bike2
 @onready var hell_biker_2 = $HellBiker2
+@onready var test_timer = $Camera/TestTimer
+@onready var heaven_tune = $Camera/HeavenTune
+@onready var slide_whistle = $Camera/SlideWhistle
 
 var start = 1
 
-func _on_timer_timeout():
-	if subtitle.visible == true:
-		subtitle.visible = false
-	elif subtitle.visible == false and start == 1:
-		subtitle.visible = true
-
 func _physics_process(delta):
-	print(start)
 	if Input.is_action_just_pressed("Enter"):
 		start = 2
 		first_timer.start()
+		heaven_tune.play()
 		title.text = '''To Hell
 
 (Ft. Heaven)'''
@@ -39,20 +36,21 @@ func _physics_process(delta):
 	if start == 2:
 		camera.position.y += 2
 	if start == 3:
-		heaven_man.rotation -= 0.01
+		heaven_man.rotation -= 0.02
 	if start ==4:
 		camera.position.y += 2
 	if start == 5:
 		hell_biker.position.x -= 5
 		hell_biker_2.position.x -= 4
-		bike.panning_strength += 1
-		bike_2.panning_strength += 1
+		bike.panning_strength = 3
+		bike_2.panning_strength = 3
 	if start == 6:
 		camera.position.y -= 10
 
 func _on_first_timer_timeout():
 	start = 3
 	rotation_timer.start()
+	slide_whistle.play()
 
 func _on_rotation_timer_timeout():
 	start = 4
@@ -80,3 +78,9 @@ func _on_bike_timer_timeout():
 
 func _on_bike_timer_2_timeout():
 	bike_2.play()
+
+func _on_timer_timeout():
+	if subtitle.visible == true:
+		subtitle.visible = false
+	elif subtitle.visible == false and start == 1:
+		subtitle.visible = true

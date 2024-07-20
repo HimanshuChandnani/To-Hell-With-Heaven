@@ -1,10 +1,12 @@
-[gd_scene load_steps=14 format=3 uid="uid://pauin7ou8ls0"]
+[gd_scene load_steps=16 format=3 uid="uid://pauin7ou8ls0"]
 
 [ext_resource type="Script" path="res://Scripts/omni_testing.gd" id="1_jdgsa"]
 [ext_resource type="FontFile" uid="uid://wrhjvjqaotxp" path="res://Assets/kenney_kenney-fonts/Fonts/Kenney High.ttf" id="1_nur6c"]
 [ext_resource type="AudioStream" path="res://Assets/Bike SFX.mp3" id="2_pp1km"]
 [ext_resource type="PackedScene" uid="uid://b2lstkgrdmac5" path="res://Scenes/friend.tscn" id="3_8f6g6"]
 [ext_resource type="AudioStream" uid="uid://c5ua2t134oo8j" path="res://Assets/Title Song.mp3" id="3_015fm"]
+[ext_resource type="AudioStream" uid="uid://cio6liuy4wf2x" path="res://Assets/Heaven Tune.mp3" id="4_erqeg"]
+[ext_resource type="AudioStream" uid="uid://bd0jjjpd6hos1" path="res://Assets/Slide Whistle.mp3" id="5_a2d55"]
 [ext_resource type="PackedScene" uid="uid://bpfjf0jh1lryf" path="res://Scenes/cloud_ground.tscn" id="5_mx5or"]
 [ext_resource type="Texture2D" uid="uid://berbft0qxf212" path="res://Assets/kenney_platformer-art-pixel-redux/Tilemap/tilemap.png" id="6_6o6ik"]
 [ext_resource type="Texture2D" uid="uid://411hggfbu85k" path="res://Assets/kenney_pixel-vehicle-pack/PNG/Characters/heaven_man.png" id="6_vhvum"]
@@ -1777,7 +1779,7 @@ wait_time = 1.8
 one_shot = true
 
 [node name="RotationTimer" type="Timer" parent="Camera"]
-wait_time = 0.9
+wait_time = 0.45
 one_shot = true
 
 [node name="SecondTimer" type="Timer" parent="Camera"]
@@ -1813,6 +1815,14 @@ autoplay = true
 [node name="BikeTimer2" type="Timer" parent="Camera"]
 wait_time = 4.35
 one_shot = true
+
+[node name="HeavenTune" type="AudioStreamPlayer2D" parent="Camera"]
+stream = ExtResource("4_erqeg")
+bus = &"Music"
+
+[node name="SlideWhistle" type="AudioStreamPlayer2D" parent="Camera"]
+stream = ExtResource("5_a2d55")
+bus = &"SFX"
 
 [node name="Title" type="Label" parent="."]
 z_index = 1
