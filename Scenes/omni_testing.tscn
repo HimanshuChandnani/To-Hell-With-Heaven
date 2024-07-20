@@ -1822,9 +1822,11 @@ one_shot = true
 
 [node name="HellTune1" type="AudioStreamPlayer2D" parent="Camera"]
 stream = ExtResource("5_5h4aa")
+bus = &"Music"
 
 [node name="HellTune2" type="AudioStreamPlayer2D" parent="Camera"]
 stream = ExtResource("6_s6w5c")
+bus = &"Music"
 
 [node name="Title" type="Label" parent="."]
 z_index = 1
