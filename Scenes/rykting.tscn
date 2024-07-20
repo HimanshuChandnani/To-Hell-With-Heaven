@@ -1,15 +1,15 @@
 [gd_scene load_steps=7 format=3 uid="uid://b8bvldkbxylaw"]
 
-[ext_resource type="PackedScene" uid="uid://c1cro03s0c3gj" path="res://Scenes/player.tscn" id="1_plg27"]
-[ext_resource type="Script" path="res://Scripts/Ball.gd" id="3_btr7r"]
-[ext_resource type="Texture2D" uid="uid://r3hqbfltc1vh" path="res://Assets/kenney_1-bit-input-prompts-pixel-16/Tiles (Black)/tile_0390.png" id="4_t7d62"]
-[ext_resource type="PackedScene" path="res://Scenes/chain_segment.tscn" id="5_hdfvp"]
+[ext_resource type="PackedScene" uid="uid://ddeu3ktqtwmxi" path="res://Scenes/player.tscn" id="1_plg27"]
+[ext_resource type="Texture2D" uid="uid://r3hqbfltc1vh" path="res://Assets/1-bit-input-prompts-useful-assets/tile_0390.png" id="2_rs2x0"]
+[ext_resource type="PackedScene" uid="uid://cu8v53ma32qed" path="res://Scenes/chain_segment.tscn" id="5_hdfvp"]
+[ext_resource type="PackedScene" uid="uid://bpfjf0jh1lryf" path="res://Scenes/cloud_ground.tscn" id="5_k3dje"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_a60oo"]
-distance = -9.0
+distance = 6.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_6734l"]
-radius = 3.16228
+[sub_resource type="CircleShape2D" id="CircleShape2D_4qbv6"]
+radius = 3.0
 
 [node name="Rykting" type="Node2D"]
 
@@ -22,8 +22,8 @@ drag_vertical_enabled = true
 drag_top_margin = 1.0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-collision_layer = 3
-collision_mask = 3
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0, 8)
@@ -33,30 +33,28 @@ shape = SubResource("WorldBoundaryShape2D_a60oo")
 polygon = PackedVector2Array(-22, 9, 29, 9, 29, 4, -22, 4)
 
 [node name="PinJoint2D2" type="PinJoint2D" parent="."]
-position = Vector2(-1, -2)
+position = Vector2(0, -2)
 node_a = NodePath("../Player")
 node_b = NodePath("../Chain/Chain segment")
 angular_limit_lower = 0.523599
 angular_limit_upper = 0.523599
 
 [node name="Chain" type="Node2D" parent="."]
-position = Vector2(-1, -2)
+position = Vector2(0, -2)
 rotation = 1.5708
 
 [node name="Ball" type="RigidBody2D" parent="Chain"]
+position = Vector2(0.000102997, 28)
 collision_layer = 2
 collision_mask = 2
-mass = 2.0
-script = ExtResource("3_btr7r")
+mass = 1.1
 
-[node name="ball img" type="Sprite2D" parent="Chain/Ball"]
-position = Vector2(0, 28)
-scale = Vector2(0.625, 0.625)
-texture = ExtResource("4_t7d62")
+[node name="Sprite2D" type="Sprite2D" parent="Chain/Ball"]
+scale = Vector2(0.603719, 0.603719)
+texture = ExtResource("2_rs2x0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Chain/Ball"]
-position = Vector2(0, 28)
-shape = SubResource("CircleShape2D_6734l")
+shape = SubResource("CircleShape2D_4qbv6")
 
 [node name="PinJoint2D" type="PinJoint2D" parent="Chain"]
 position = Vector2(0, 24)
@@ -105,3 +103,6 @@ node_b = NodePath("../Chain segment6")
 
 [node name="Chain segment6" parent="Chain" instance=ExtResource("5_hdfvp")]
 position = Vector2(0, 22)
+
+[node name="CloudGround" parent="." instance=ExtResource("5_k3dje")]
+position = Vector2(17, 25)
