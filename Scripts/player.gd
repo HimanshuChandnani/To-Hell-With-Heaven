@@ -14,9 +14,20 @@ func _physics_process(delta):
 	# Putting ball in hand
 	if Input.is_action_just_pressed("interact") and ballIsInHands == true:
 		ballIsInHands = false
+		$"../Chain/PinJoint2D7".softness = 16
 	elif Input.is_action_just_pressed("interact") and ballIsInHands == false or ballIsInHands == true:
 		ballIsInHands = true
-		ball.global_position = position
+		ball.global_position = Vector2(position.x,position.y-5)
+		$"../Chain/PinJoint2D7".softness = 0
+		# Mouse movement
+		var mousePosition = get_global_mouse_position()
+		#print(mousePosition)
+		#print(position.angle_to_point(mousePosition))
+		$Label.rotation = position.angle_to_point(mousePosition)
+		if Input.is_action_just_pressed("left click"):
+			ballIsInHands = false
+			$"../Chain/PinJoint2D7".softness = 16
+			ball.apply_central_impulse(mousePosition.normalized()*10000)
 	
 	# Slow down
 	var slow = 1
