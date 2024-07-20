@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2lstkgrdmac5"]
+
+[ext_resource type="Texture2D" uid="uid://caufwfk3a6eey" path="res://Assets/kenney_pixel-vehicle-pack/PNG/Characters/heaven_friend.png" id="1_epukb"]
+
+[node name="Friend" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -7.5)
+texture = ExtResource("1_epukb")

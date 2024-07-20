@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://pauin7ou8ls0"]
+
+[node name="omniTesting" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -52.0
+offset_top = -26.0
+offset_right = 52.0
+offset_bottom = 26.0
+text = "To Hell
+(Ft. Heaven)"
+horizontal_alignment = 1
