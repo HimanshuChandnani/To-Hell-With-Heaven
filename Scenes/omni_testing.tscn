@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://pauin7ou8ls0"]
+[gd_scene load_steps=36 format=3 uid="uid://pauin7ou8ls0"]
 
 [ext_resource type="Script" path="res://Scripts/omni_testing.gd" id="1_jdgsa"]
 [ext_resource type="FontFile" uid="uid://wrhjvjqaotxp" path="res://Assets/kenney_kenney-fonts/Fonts/Kenney High.ttf" id="1_nur6c"]
@@ -20,8 +20,8 @@
 [ext_resource type="PackedScene" uid="uid://b8bvldkbxylaw" path="res://Scenes/rykting.tscn" id="18_3qvnf"]
 [ext_resource type="PackedScene" uid="uid://cs4ovrh05ky76" path="res://Scenes/level1.tscn" id="19_amtkx"]
 [ext_resource type="Shader" path="res://Scripts/level-shader.gdshader" id="20_h47fd"]
-[ext_resource type="PackedScene" path="res://Scenes/killzone.tscn" id="20_m6kp7"]
-[ext_resource type="PackedScene" path="res://Scenes/startarea.tscn" id="21_rqcji"]
+[ext_resource type="PackedScene" uid="uid://blhyccf4q4tl5" path="res://Scenes/killzone.tscn" id="20_m6kp7"]
+[ext_resource type="PackedScene" uid="uid://bmsgshpu1rd4g" path="res://Scenes/startarea.tscn" id="21_rqcji"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6ekr4"]
 texture = ExtResource("6_6o6ik")
@@ -5269,6 +5269,8 @@ sources/0 = SubResource("TileSetAtlasSource_6ekr4")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wwaj5"]
 shader = ExtResource("20_h47fd")
+shader_parameter/color1 = Vector4(1, 1, 1, 1)
+shader_parameter/color2 = Vector4(1, 0, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oupaa"]
 size = Vector2(572, 18)
@@ -5283,10 +5285,10 @@ size = Vector2(14.5, 6.5)
 size = Vector2(633, 19)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q1gmh"]
-size = Vector2(72, 6)
+size = Vector2(72, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fmosf"]
-size = Vector2(266, 9)
+size = Vector2(265, 11)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l25di"]
 size = Vector2(20, 217)
@@ -5621,11 +5623,11 @@ position = Vector2(223.5, 1112.5)
 shape = SubResource("RectangleShape2D_nsin8")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(493, 850)
+position = Vector2(493, 849)
 shape = SubResource("RectangleShape2D_q1gmh")
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(50, 531.5)
+position = Vector2(49.5, 532.5)
 shape = SubResource("RectangleShape2D_fmosf")
 
 [node name="Startarea" parent="." instance=ExtResource("21_rqcji")]
