@@ -37,6 +37,8 @@ extends Node2D
 @onready var a_3 = $Friend/A3
 @onready var h = $Friend/H
 @onready var exclaimation = $"Friend/Exclaimation"
+@onready var heaven_s_golden_gate = $"Heaven's Golden Gate"
+@onready var gate_timer = $"Heaven's Golden Gate/GateTimer"
 
 var start = 1
 var tune_1_play = false
@@ -71,6 +73,8 @@ func _physics_process(delta):
 			hell_biker_2.position.x -= 4
 		6:
 			camera.position.y -= 10
+		8:
+			heaven_s_golden_gate.skew += 0.2
 
 func _on_first_timer_timeout():
 	start = 3
@@ -146,6 +150,11 @@ func _on_yell_timer_timeout():
 			h.visible = true
 		8:
 			exclaimation.visible = true
+			start = 8
+			gate_timer.start()
 		9:
 			yell_timer.stop()
 	yells += 1
+
+func _on_gate_timer_timeout():
+	start = 9
