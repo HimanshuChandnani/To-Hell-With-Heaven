@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://pauin7ou8ls0"]
+[gd_scene load_steps=20 format=3 uid="uid://pauin7ou8ls0"]
 
 [ext_resource type="Script" path="res://Scripts/omni_testing.gd" id="1_jdgsa"]
 [ext_resource type="FontFile" uid="uid://wrhjvjqaotxp" path="res://Assets/kenney_kenney-fonts/Fonts/Kenney High.ttf" id="1_nur6c"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://b06wuap0825jc" path="res://Scenes/hell_biker.tscn" id="8_4wleu"]
 [ext_resource type="FontFile" uid="uid://duebolnx5p3lg" path="res://Assets/kenney_kenney-fonts/Fonts/Kenney Mini Square Mono.ttf" id="9_vul8h"]
 [ext_resource type="PackedScene" uid="uid://d0bvvfksr0iwx" path="res://Scenes/hell_biker_2.tscn" id="11_vthi6"]
+[ext_resource type="PackedScene" uid="uid://d3qhboltu1d06" path="res://Scenes/heaven's_golden_gate.tscn" id="17_hw1cr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6ekr4"]
 texture = ExtResource("6_6o6ik")
@@ -1945,6 +1946,7 @@ offset_bottom = -15.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("9_vul8h")
 text = "!!!"
+metadata/_edit_use_anchors_ = true
 
 [node name="YellTimer" type="Timer" parent="Friend"]
 wait_time = 0.5
@@ -2024,6 +2026,13 @@ position = Vector2(198, 898.5)
 position = Vector2(-198, -898.5)
 stream = ExtResource("2_pp1km")
 
+[node name="Heaven\'s Golden Gate" parent="." instance=ExtResource("17_hw1cr")]
+position = Vector2(119, 271)
+
+[node name="GateTimer" type="Timer" parent="Heaven\'s Golden Gate"]
+wait_time = 0.1
+one_shot = true
+
 [connection signal="timeout" from="Camera/FirstTimer" to="." method="_on_first_timer_timeout"]
 [connection signal="timeout" from="Camera/RotationTimer" to="." method="_on_rotation_timer_timeout"]
 [connection signal="timeout" from="Camera/SecondTimer" to="." method="_on_second_timer_timeout"]
@@ -2035,3 +2044,4 @@ stream = ExtResource("2_pp1km")
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Friend/YellTimer" to="." method="_on_yell_timer_timeout"]
 [connection signal="timeout" from="HeavenNpc/SightTimer" to="." method="_on_sight_timer_timeout"]
+[connection signal="timeout" from="Heaven\'s Golden Gate/GateTimer" to="." method="_on_gate_timer_timeout"]

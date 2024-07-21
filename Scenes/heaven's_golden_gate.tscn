@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3qhboltu1d06"]
+
+[ext_resource type="Texture2D" uid="uid://d1vyfirs4fcjm" path="res://Assets/isolated-on-white-closed-golden-260nw-196690970-removebg-preview.png" id="1_r8wtk"]
+
+[node name="Heaven\'s Golden Gate" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -20)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_r8wtk")
