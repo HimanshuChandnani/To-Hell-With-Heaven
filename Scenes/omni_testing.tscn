@@ -15,8 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://d3sxeq0grudgd" path="res://Assets/kenney_pixel-vehicle-pack/PNG/Characters/heaven_npc.png" id="7_xre60"]
 [ext_resource type="PackedScene" uid="uid://b06wuap0825jc" path="res://Scenes/hell_biker.tscn" id="8_4wleu"]
 [ext_resource type="FontFile" uid="uid://duebolnx5p3lg" path="res://Assets/kenney_kenney-fonts/Fonts/Kenney Mini Square Mono.ttf" id="9_vul8h"]
-[ext_resource type="PackedScene" path="res://Scenes/hell_biker_2.tscn" id="11_vthi6"]
-[ext_resource type="PackedScene" path="res://Scenes/heaven's_golden_gate.tscn" id="17_hw1cr"]
+[ext_resource type="PackedScene" uid="uid://d0bvvfksr0iwx" path="res://Scenes/hell_biker_2.tscn" id="11_vthi6"]
+[ext_resource type="PackedScene" uid="uid://d3qhboltu1d06" path="res://Scenes/heaven's_golden_gate.tscn" id="17_hw1cr"]
 [ext_resource type="PackedScene" uid="uid://b8bvldkbxylaw" path="res://Scenes/rykting.tscn" id="18_3qvnf"]
 [ext_resource type="PackedScene" uid="uid://cs4ovrh05ky76" path="res://Scenes/level1.tscn" id="19_amtkx"]
 [ext_resource type="Shader" path="res://Scripts/level-shader.gdshader" id="20_h47fd"]
@@ -5279,13 +5279,13 @@ size = Vector2(572, 18)
 size = Vector2(691, 18)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fjt7o"]
-size = Vector2(14.5, 6.5)
+size = Vector2(11, 10.5625)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nsin8"]
 size = Vector2(633, 19)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q1gmh"]
-size = Vector2(72, 8)
+size = Vector2(68, 11)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fmosf"]
 size = Vector2(265, 11)
@@ -5603,19 +5603,19 @@ position = Vector2(301.5, 671)
 shape = SubResource("RectangleShape2D_3p5ub")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(618, 984)
+position = Vector2(617.5, 981.563)
 shape = SubResource("RectangleShape2D_fjt7o")
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(579, 984)
+position = Vector2(579, 982)
 shape = SubResource("RectangleShape2D_fjt7o")
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(694.25, 985)
+position = Vector2(694, 981.281)
 shape = SubResource("RectangleShape2D_fjt7o")
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(656, 984)
+position = Vector2(656, 982)
 shape = SubResource("RectangleShape2D_fjt7o")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Killzone"]
@@ -5623,7 +5623,7 @@ position = Vector2(223.5, 1112.5)
 shape = SubResource("RectangleShape2D_nsin8")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(493, 849)
+position = Vector2(493, 848)
 shape = SubResource("RectangleShape2D_q1gmh")
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="Killzone"]
