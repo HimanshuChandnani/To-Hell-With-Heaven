@@ -10,7 +10,8 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var ballIsInHands = false
 @onready var ball = $"../Chain/Ball"
 
-var on = 0
+var on = 1
+var timerPossible = 1
 
 func _physics_process(delta):
 	if on:
@@ -19,8 +20,10 @@ func _physics_process(delta):
 			ballIsInHands = false
 			$"../Chain/PinJoint2D7".softness = 16
 			$Label.visible = false
-		elif Input.is_action_just_pressed("interact") and ballIsInHands == false and global_position.distance_to(ball.global_position) < 10 or ballIsInHands == true:
+		elif Input.is_action_just_pressed("interact") and ballIsInHands == false and timerPossible or ballIsInHands == true:
 			ballIsInHands = true
+			$"../Timer".start()
+			timerPossible = false
 			ball.global_position = Vector2(global_position.x,global_position.y-5)
 			$"../Chain/PinJoint2D7".softness = 0
 			# Ball throw and mouse movement
@@ -33,11 +36,13 @@ func _physics_process(delta):
 				$Label.visible = false
 				$"../Chain/PinJoint2D7".softness = 16
 				ball.apply_impulse(Vector2(cos(temp),sin(temp))*10000)
-		if global_position.distance_to(ball.global_position) < 10:
-			$"../Chain/Label".visible = true
-			$"../Chain/Label".global_position = Vector2(ball.global_position.x,ball.global_position.y-7)
-		else:
-			$"../Chain/Label".visible = false
+		#if global_position.distance_to(ball.global_position) < 10:
+			#$"../Chain/Label".visible = true
+			#$"../Chain/Label".global_position = Vector2(ball.global_position.x,ball.global_position.y-7)
+		#else:
+			#$"../Chain/Label".visible = false
+		$"../Chain/Label".global_position = Vector2(ball.global_position.x,ball.global_position.y-7)
+			
 		# Slow down
 		var slow = 1
 		if global_position.distance_to(ball.global_position) > 25 or ballIsInHands:
@@ -75,3 +80,7 @@ func _physics_process(delta):
 			velocity = global_position.direction_to(ball.global_position) * SPEED * 2
 		
 		move_and_slide()
+
+
+func _on_timer_timeout():
+	timerPossible = true

@@ -36,8 +36,7 @@ script = ExtResource("1_1cgkf")
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -7.5)
 sprite_frames = SubResource("SpriteFrames_b1ocb")
-animation = &"idle"
-autoplay = "walk"
+animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -6.5)

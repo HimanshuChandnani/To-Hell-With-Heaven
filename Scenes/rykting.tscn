@@ -125,3 +125,8 @@ position = Vector2(-5, 1.90735e-05)
 node_a = NodePath("../Ball")
 node_b = NodePath("../../Player")
 softness = 16.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="timeout" from="Timer" to="Player" method="_on_timer_timeout"]

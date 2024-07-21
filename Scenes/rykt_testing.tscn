@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://hwfgomp7dd2y"]
+
+[ext_resource type="PackedScene" uid="uid://b8bvldkbxylaw" path="res://Scenes/rykting.tscn" id="1_jvxgg"]
+[ext_resource type="PackedScene" uid="uid://cs4ovrh05ky76" path="res://Scenes/level1.tscn" id="2_latux"]
+
+[node name="Rykt testing" type="Node2D"]
+position = Vector2(-13, -20)
+
+[node name="Rykting" parent="." instance=ExtResource("1_jvxgg")]
+position = Vector2(23, 16)
+
+[node name="Node2D" parent="." instance=ExtResource("2_latux")]
+position = Vector2(13, 20)
+scale = Vector2(0.3, 0.3)
