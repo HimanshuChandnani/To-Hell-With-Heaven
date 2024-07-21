@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://pauin7ou8ls0"]
+[gd_scene load_steps=27 format=3 uid="uid://pauin7ou8ls0"]
 
 [ext_resource type="Script" path="res://Scripts/omni_testing.gd" id="1_jdgsa"]
 [ext_resource type="FontFile" uid="uid://wrhjvjqaotxp" path="res://Assets/kenney_kenney-fonts/Fonts/Kenney High.ttf" id="1_nur6c"]
@@ -19,6 +19,8 @@
 [ext_resource type="PackedScene" path="res://Scenes/heaven's_golden_gate.tscn" id="17_hw1cr"]
 [ext_resource type="PackedScene" uid="uid://b8bvldkbxylaw" path="res://Scenes/rykting.tscn" id="18_3qvnf"]
 [ext_resource type="PackedScene" uid="uid://cs4ovrh05ky76" path="res://Scenes/level1.tscn" id="19_amtkx"]
+[ext_resource type="PackedScene" uid="uid://blhyccf4q4tl5" path="res://Scenes/killzone.tscn" id="20_m6kp7"]
+[ext_resource type="PackedScene" uid="uid://bmsgshpu1rd4g" path="res://Scenes/startarea.tscn" id="21_rqcji"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6ekr4"]
 texture = ExtResource("6_6o6ik")
@@ -5264,6 +5266,15 @@ physics_layer_0/collision_layer = 3
 physics_layer_0/collision_mask = 3
 sources/0 = SubResource("TileSetAtlasSource_6ekr4")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oupaa"]
+size = Vector2(711, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l25di"]
+size = Vector2(20, 131)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2c50h"]
+size = Vector2(20, 92)
+
 [node name="omniTesting" type="Node2D"]
 script = ExtResource("1_jdgsa")
 
@@ -5548,6 +5559,24 @@ one_shot = true
 position = Vector2(283, 274)
 scale = Vector2(0.3, 0.3)
 
+[node name="Killzone" parent="." instance=ExtResource("20_m6kp7")]
+position = Vector2(347, 189)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(290.5, 176)
+shape = SubResource("RectangleShape2D_oupaa")
+
+[node name="Startarea" parent="." instance=ExtResource("21_rqcji")]
+position = Vector2(204, 203)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Startarea"]
+position = Vector2(144, 5.5)
+shape = SubResource("RectangleShape2D_l25di")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Startarea"]
+position = Vector2(526, 28)
+shape = SubResource("RectangleShape2D_2c50h")
+
 [connection signal="timeout" from="Camera/FirstTimer" to="." method="_on_first_timer_timeout"]
 [connection signal="timeout" from="Camera/RotationTimer" to="." method="_on_rotation_timer_timeout"]
 [connection signal="timeout" from="Camera/SecondTimer" to="." method="_on_second_timer_timeout"]
@@ -5560,3 +5589,4 @@ scale = Vector2(0.3, 0.3)
 [connection signal="timeout" from="Friend/YellTimer" to="." method="_on_yell_timer_timeout"]
 [connection signal="timeout" from="HeavenNpc/SightTimer" to="." method="_on_sight_timer_timeout"]
 [connection signal="timeout" from="Heaven\'s Golden Gate/GateTimer" to="." method="_on_gate_timer_timeout"]
+[connection signal="body_entered" from="Startarea" to="." method="_on_startarea_body_entered"]
