@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://pauin7ou8ls0"]
+[gd_scene load_steps=30 format=3 uid="uid://pauin7ou8ls0"]
 
 [ext_resource type="Script" path="res://Scripts/omni_testing.gd" id="1_jdgsa"]
 [ext_resource type="FontFile" uid="uid://wrhjvjqaotxp" path="res://Assets/kenney_kenney-fonts/Fonts/Kenney High.ttf" id="1_nur6c"]
@@ -5278,6 +5278,12 @@ size = Vector2(20, 217)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2c50h"]
 size = Vector2(7, 78)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_upqgb"]
+size = Vector2(726, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lr7ce"]
+size = Vector2(21, 95)
+
 [node name="omniTesting" type="Node2D"]
 script = ExtResource("1_jdgsa")
 
@@ -5583,6 +5589,16 @@ shape = SubResource("RectangleShape2D_l25di")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Startarea"]
 position = Vector2(804, 513)
 shape = SubResource("RectangleShape2D_2c50h")
+
+[node name="Boundries" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundries"]
+position = Vector2(631, 380)
+shape = SubResource("RectangleShape2D_upqgb")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Boundries"]
+position = Vector2(278.5, 322.5)
+shape = SubResource("RectangleShape2D_lr7ce")
 
 [connection signal="timeout" from="Camera/FirstTimer" to="." method="_on_first_timer_timeout"]
 [connection signal="timeout" from="Camera/RotationTimer" to="." method="_on_rotation_timer_timeout"]
