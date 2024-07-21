@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://pauin7ou8ls0"]
+[gd_scene load_steps=39 format=3 uid="uid://pauin7ou8ls0"]
 
 [ext_resource type="Script" path="res://Scripts/omni_testing.gd" id="1_jdgsa"]
 [ext_resource type="FontFile" uid="uid://wrhjvjqaotxp" path="res://Assets/kenney_kenney-fonts/Fonts/Kenney High.ttf" id="1_nur6c"]
@@ -5296,6 +5296,15 @@ size = Vector2(20, 217)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2c50h"]
 size = Vector2(7, 78)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dia4m"]
+size = Vector2(18, 191)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p1acu"]
+size = Vector2(5, 79)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ykxvi"]
+size = Vector2(10, 191)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_upqgb"]
 size = Vector2(726, 20)
 
@@ -5640,6 +5649,22 @@ shape = SubResource("RectangleShape2D_l25di")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Startarea"]
 position = Vector2(804, 513)
 shape = SubResource("RectangleShape2D_2c50h")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Startarea"]
+position = Vector2(454, 398.5)
+shape = SubResource("RectangleShape2D_dia4m")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Startarea"]
+position = Vector2(82.5, 936.5)
+shape = SubResource("RectangleShape2D_p1acu")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Startarea"]
+position = Vector2(290, 763.5)
+shape = SubResource("RectangleShape2D_ykxvi")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Startarea"]
+position = Vector2(683, 745)
+shape = SubResource("RectangleShape2D_ykxvi")
 
 [node name="Boundries" type="StaticBody2D" parent="."]
 
