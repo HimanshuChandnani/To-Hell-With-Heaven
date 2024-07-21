@@ -60,13 +60,13 @@ func _physics_process(delta):
 		$Rykting/Player/Halo.visible = true
 		if startarea.start_pos != $Rykting/Player.global_position:
 			if $Rykting/Player.global_position.x < startarea.start_pos.x+2:
-				$Rykting/Player.global_position.x += 10
+				$Rykting/Player.global_position.x += 15
 			if $Rykting/Player.global_position.x > startarea.start_pos.x-2:
-				$Rykting/Player.global_position.x -= 10
+				$Rykting/Player.global_position.x -= 15
 			if $Rykting/Player.global_position.y < startarea.start_pos.y+2:
-				$Rykting/Player.global_position.y += 10
+				$Rykting/Player.global_position.y += 15
 			if $Rykting/Player.global_position.y > startarea.start_pos.y-2:
-				$Rykting/Player.global_position.y -= 10
+				$Rykting/Player.global_position.y -= 15
 		else:
 			killzone.fly = false
 			$Rykting/Player/Halo.visible = false
