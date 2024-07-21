@@ -49,17 +49,18 @@ func _physics_process(delta):
 
 (Ft. Heaven)'''
 		title_song.playing = false
-	if start == 2:
-		camera.position.y += 2
-	if start == 3:
-		heaven_man.rotation -= 0.02
-	if start == 4:
-		camera.position.y += 2
-	if start == 5:
-		hell_biker.position.x -= 5
-		hell_biker_2.position.x -= 4
-	if start == 6:
-		camera.position.y -= 10
+	match start:
+		2:
+			camera.position.y += 2
+		3:
+			heaven_man.rotation -= 0.02
+		4:
+			camera.position.y += 2
+		5:
+			hell_biker.position.x -= 5
+			hell_biker_2.position.x -= 4
+		6:
+			camera.position.y -= 10
 
 func _on_first_timer_timeout():
 	start = 3
