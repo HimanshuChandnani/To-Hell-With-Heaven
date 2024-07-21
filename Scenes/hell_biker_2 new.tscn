@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://21pbolq3n1y5"]
+
+[ext_resource type="PackedScene" uid="uid://b06wuap0825jc" path="res://Scenes/hell_biker.tscn" id="1_878gt"]
+[ext_resource type="Texture2D" uid="uid://b4yh2u3csh2q5" path="res://Assets/kenney_pixel-vehicle-pack/PNG/Characters/hell_man_cycle_2.png" id="2_8ptsi"]
+[ext_resource type="FontFile" uid="uid://2kfowrhew3mp" path="res://Assets/kenney_kenney-fonts/Fonts/Kenney Mini.ttf" id="3_o2lyk"]
+
+[node name="HellBiker2" instance=ExtResource("1_878gt")]
+z_index = 1
+position = Vector2(8, -5)
+
+[node name="Biker" parent="." index="0"]
+scale = Vector2(-1, 1)
+texture = ExtResource("2_8ptsi")
+
+[node name="Bike" parent="." index="1"]
+scale = Vector2(-1, 1)
+
+[node name="Label" type="Label" parent="." index="3"]
+offset_left = -26.0
+offset_top = -39.0
+offset_right = 143.0
+offset_bottom = 4.0
+scale = Vector2(0.580888, 0.580888)
+theme_override_fonts/font = ExtResource("3_o2lyk")
+text = "Welcome 
+back, dude!!"
+horizontal_alignment = 1
