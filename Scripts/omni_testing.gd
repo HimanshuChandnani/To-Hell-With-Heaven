@@ -39,6 +39,8 @@ extends Node2D
 @onready var heaven_s_golden_gate = $"Heaven's Golden Gate"
 @onready var gate_timer = $"Heaven's Golden Gate/GateTimer"
 @onready var heaven_man = $Rykting
+@onready var startarea = $Startarea
+@onready var killzone = $Killzone
 
 var start = 1
 var tune_1_play = false
@@ -49,8 +51,24 @@ var yells = 2
 
 func _ready():
 	$Rykting/Player.on = 0
+	killzone.fly = false
 
 func _physics_process(delta):
+	if killzone.fly == true:
+		$Rykting/Player/Halo.visible = true
+		if startarea.start_pos != $Rykting/Player.global_position:
+			if $Rykting/Player.global_position.x < startarea.start_pos.x+2:
+				$Rykting/Player.global_position.x += 10
+			if $Rykting/Player.global_position.x > startarea.start_pos.x-2:
+				$Rykting/Player.global_position.x -= 10
+			if $Rykting/Player.global_position.y < startarea.start_pos.y+2:
+				$Rykting/Player.global_position.y += 10
+			if $Rykting/Player.global_position.y > startarea.start_pos.y-2:
+				$Rykting/Player.global_position.y -= 10
+		else:
+			killzone.fly = false
+			$Rykting/Player/Halo.visible = false
+	
 	if tune_1_play == true and hell_tune_1.playing == false and tune_2_play == false:
 		hell_tune_2.play()
 		tune_2_play = true
@@ -172,3 +190,8 @@ func _on_gate_timer_timeout():
 	start = 9
 	$Rykting/Player.on = 1
 	$Rykting/Player.velocity.x = 500
+
+func _on_startarea_body_entered(body):
+	if body.has_method("player"):
+		killzone.fly = false
+		$Rykting/Player/Halo.visible = false

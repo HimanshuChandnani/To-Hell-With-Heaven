@@ -81,6 +81,8 @@ func _physics_process(delta):
 		
 		move_and_slide()
 
+func player():
+	pass
 
 func _on_timer_timeout():
 	timerPossible = true
