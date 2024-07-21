@@ -1780,6 +1780,7 @@ script = ExtResource("1_jdgsa")
 z_index = 6
 zoom = Vector2(4, 4)
 position_smoothing_enabled = true
+position_smoothing_speed = 10.0
 
 [node name="FirstTimer" type="Timer" parent="Camera"]
 wait_time = 1.8
