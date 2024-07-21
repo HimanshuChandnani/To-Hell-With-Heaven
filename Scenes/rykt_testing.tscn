@@ -7,7 +7,7 @@
 position = Vector2(-13, -20)
 
 [node name="Rykting" parent="." instance=ExtResource("1_jvxgg")]
-position = Vector2(23, 16)
+position = Vector2(773, 484)
 
 [node name="Node2D" parent="." instance=ExtResource("2_latux")]
 position = Vector2(13, 20)
