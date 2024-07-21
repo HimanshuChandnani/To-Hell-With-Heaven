@@ -41,6 +41,7 @@ extends Node2D
 @onready var heaven_man = $Rykting
 @onready var startarea = $Startarea
 @onready var killzone = $Killzone
+@onready var second_half_timer = $Camera/SecondHalfTimer
 
 var start = 1
 var tune_1_play = false
@@ -48,6 +49,7 @@ var tune_2_play = false
 var enter = false
 var sights = 1
 var yells = 2
+var x = 2
 
 func _ready():
 	$Rykting/Player.on = 0
@@ -88,7 +90,7 @@ func _physics_process(delta):
 		3:
 			heaven_man.rotation -= 0.02
 		4:
-			camera.position.y += 2
+			camera.position.y += x
 		5:
 			hell_biker.position.x -= 5
 			hell_biker_2.position.x -= 4
@@ -119,12 +121,8 @@ func _on_rotation_timer_timeout():
 	sight_timer.start()
 
 func _on_second_timer_timeout():
-	start = 5
-	friend.visible = true
-	heaven_npc.visible = false
-	heaven_man.rotation = 0
-	#heaven_man.flip_h = true
-	wait_timer.start()
+	x = 5
+	second_half_timer.start()
 
 func _on_wait_timer_timeout():
 	start = 6
@@ -195,3 +193,11 @@ func _on_startarea_body_entered(body):
 	if body.has_method("player"):
 		killzone.fly = false
 		$Rykting/Player/Halo.visible = false
+
+func _on_second_half_timer_timeout():
+	start = 5
+	friend.visible = true
+	heaven_npc.visible = false
+	heaven_man.rotation = 0
+	#heaven_man.flip_h = true
+	wait_timer.start()
