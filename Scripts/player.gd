@@ -22,8 +22,6 @@ func _physics_process(delta):
 		$"../Chain/PinJoint2D7".softness = 0
 		# Ball throw and mouse movement
 		var mousePosition = get_global_mouse_position()
-		#print(mousePosition)
-		#print(position.angle_to_point(mousePosition))
 		$Label.visible = true
 		$Label.rotation = position.angle_to_point(mousePosition)
 		var temp = position.angle_to_point(mousePosition)

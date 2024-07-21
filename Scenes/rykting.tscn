@@ -1,12 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://b8bvldkbxylaw"]
+[gd_scene load_steps=6 format=3 uid="uid://b8bvldkbxylaw"]
 
 [ext_resource type="PackedScene" uid="uid://ddeu3ktqtwmxi" path="res://Scenes/player.tscn" id="1_plg27"]
 [ext_resource type="Texture2D" uid="uid://r3hqbfltc1vh" path="res://Assets/kenney_1-bit-input-prompts-pixel-16/Tiles (Black)/tile_0390.png" id="2_rs2x0"]
 [ext_resource type="PackedScene" uid="uid://cu8v53ma32qed" path="res://Scenes/chain_segment.tscn" id="5_hdfvp"]
-[ext_resource type="PackedScene" uid="uid://bpfjf0jh1lryf" path="res://Scenes/cloud_ground.tscn" id="5_k3dje"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_a60oo"]
-distance = 6.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_icdev"]
 font_size = 18
@@ -36,17 +32,6 @@ pivot_offset = Vector2(5, 13)
 text = "→"
 horizontal_alignment = 2
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-collision_layer = 7
-collision_mask = 7
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, 12)
-shape = SubResource("WorldBoundaryShape2D_a60oo")
-
-[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(-22, 9, 29, 9, 29, 4, -22, 4)
-
 [node name="PinJoint2D2" type="PinJoint2D" parent="."]
 position = Vector2(0, -2)
 node_a = NodePath("../Player")
@@ -59,6 +44,7 @@ position = Vector2(0, -2)
 rotation = 1.5708
 
 [node name="Label" type="Label" parent="Chain"]
+visible = false
 z_index = 2
 offset_left = -14.0
 offset_top = -10.9999
@@ -139,6 +125,3 @@ position = Vector2(-5, 1.90735e-05)
 node_a = NodePath("../Ball")
 node_b = NodePath("../../Player")
 softness = 16.0
-
-[node name="CloudGround" parent="." instance=ExtResource("5_k3dje")]
-position = Vector2(17, 25)
