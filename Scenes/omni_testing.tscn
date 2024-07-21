@@ -5704,3 +5704,4 @@ shape = SubResource("RectangleShape2D_hfl03")
 [connection signal="timeout" from="HeavenNpc/SightTimer" to="." method="_on_sight_timer_timeout"]
 [connection signal="timeout" from="Heaven\'s Golden Gate/GateTimer" to="." method="_on_gate_timer_timeout"]
 [connection signal="body_entered" from="Startarea" to="." method="_on_startarea_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

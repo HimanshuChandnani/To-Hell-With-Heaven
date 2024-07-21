@@ -1,12 +1,34 @@
-[gd_scene load_steps=7 format=3 uid="uid://ddeu3ktqtwmxi"]
+[gd_scene load_steps=10 format=3 uid="uid://ddeu3ktqtwmxi"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_1cgkf"]
 [ext_resource type="Texture2D" uid="uid://411hggfbu85k" path="res://Assets/kenney_pixel-vehicle-pack/PNG/Characters/heaven_man.png" id="1_3n8fr"]
 [ext_resource type="Texture2D" uid="uid://bibf53b2jylea" path="res://Assets/kenney_pixel-vehicle-pack/PNG/Characters/man_walk1.png" id="2_up8k7"]
+[ext_resource type="Texture2D" uid="uid://di1lthi1t6bqn" path="res://Assets/kenney_pixel-vehicle-pack/PNG/Characters/hellfit_man.png" id="2_v4kla"]
+[ext_resource type="Texture2D" uid="uid://d0qjag6g75gom" path="res://Assets/kenney_pixel-vehicle-pack/PNG/Characters/hellman_walk1.png" id="3_d8745"]
 [ext_resource type="Texture2D" uid="uid://g08ngywic2w2" path="res://Assets/kenney_pixel-vehicle-pack/PNG/Characters/man_walk2.png" id="3_symvv"]
+[ext_resource type="Texture2D" uid="uid://ctg1rqqi3htx8" path="res://Assets/kenney_pixel-vehicle-pack/PNG/Characters/hellman_walk2.png" id="4_ns54d"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_b1ocb"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_v4kla")
+}],
+"loop": true,
+"name": &"dark idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_d8745")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ns54d")
+}],
+"loop": true,
+"name": &"dark walk",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_3n8fr")
@@ -36,7 +58,7 @@ script = ExtResource("1_1cgkf")
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -7.5)
 sprite_frames = SubResource("SpriteFrames_b1ocb")
-animation = &"idle"
+animation = &"dark walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -6.5)

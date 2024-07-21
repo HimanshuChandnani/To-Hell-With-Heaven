@@ -201,3 +201,8 @@ func _on_second_half_timer_timeout():
 	heaven_man.rotation = 0
 	#heaven_man.flip_h = true
 	wait_timer.start()
+
+
+func _on_area_2d_body_entered(body):
+	if body.has_method('dark'):
+		body.dark()

@@ -12,6 +12,12 @@ var ballIsInHands = false
 
 var on = 1
 var timerPossible = 1
+var idle = 'idle'
+var walk = 'walk'
+
+func dark():
+	idle = 'dark idle'
+	walk = 'dark walk'
 
 func _physics_process(delta):
 	if on:
@@ -68,9 +74,9 @@ func _physics_process(delta):
 		else:
 			$Sprite2D.flip_h = false
 		if direction == 0:
-			$Sprite2D.play('idle')
+			$Sprite2D.play(idle)
 		else:
-			$Sprite2D.play('walk')
+			$Sprite2D.play(walk)
 		
 		# Get pulled towards ball
 		if global_position.distance_to(ball.global_position) > 37:
