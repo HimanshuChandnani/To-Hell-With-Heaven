@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/omni_testing.gd" id="1_jdgsa"]
 [ext_resource type="FontFile" uid="uid://wrhjvjqaotxp" path="res://Assets/kenney_kenney-fonts/Fonts/Kenney High.ttf" id="1_nur6c"]
-[ext_resource type="AudioStream" path="res://Assets/Bike SFX.mp3" id="2_pp1km"]
+[ext_resource type="AudioStream" uid="uid://b41aqlfotjno8" path="res://Assets/Bike SFX.mp3" id="2_pp1km"]
 [ext_resource type="PackedScene" uid="uid://b2lstkgrdmac5" path="res://Scenes/friend.tscn" id="3_8f6g6"]
 [ext_resource type="AudioStream" uid="uid://c5ua2t134oo8j" path="res://Assets/Title Song.mp3" id="3_015fm"]
 [ext_resource type="AudioStream" uid="uid://cio6liuy4wf2x" path="res://Assets/Heaven Tune.mp3" id="4_erqeg"]
@@ -1893,6 +1893,33 @@ flip_h = true
 position = Vector2(-24, 264)
 texture = ExtResource("7_xre60")
 
+[node name="SightLine1" type="Polygon2D" parent="HeavenNpc"]
+visible = false
+z_index = 2
+position = Vector2(27, 28)
+rotation = -1.0472
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(27, -5, 27, -4, 31, -4, 31, -5)
+
+[node name="SightLine2" type="Polygon2D" parent="HeavenNpc"]
+visible = false
+z_index = 2
+position = Vector2(24, 33)
+rotation = -1.0472
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(27, -5, 27, -4, 31, -4, 31, -5)
+
+[node name="SightLine3" type="Polygon2D" parent="HeavenNpc"]
+visible = false
+z_index = 2
+position = Vector2(21, 38)
+rotation = -1.0472
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(27, -5, 27, -4, 31, -4, 31, -5)
+
+[node name="SightTimer" type="Timer" parent="HeavenNpc"]
+wait_time = 0.1
+
 [node name="HellBiker" parent="." instance=ExtResource("8_4wleu")]
 z_index = 1
 position = Vector2(182, 897)
@@ -1920,3 +1947,4 @@ stream = ExtResource("2_pp1km")
 [connection signal="timeout" from="Camera/BikeTimer2" to="." method="_on_bike_timer_2_timeout"]
 [connection signal="timeout" from="Camera/TuneTimer" to="." method="_on_tune_timer_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="HeavenNpc/SightTimer" to="." method="_on_sight_timer_timeout"]

@@ -24,11 +24,16 @@ extends Node2D
 @onready var bike_2 = $HellBiker2/Bike3
 @onready var hell_tune_1 = $Camera/HellTune1
 @onready var hell_tune_2 = $Camera/HellTune2
+@onready var sight_line_1 = $HeavenNpc/SightLine1
+@onready var sight_line_2 = $HeavenNpc/SightLine2
+@onready var sight_line_3 = $HeavenNpc/SightLine3
+@onready var sight_timer = $HeavenNpc/SightTimer
 
 var start = 1
 var tune_1_play = false
 var tune_2_play = false
 var enter = false
+var sights = 1
 
 func _physics_process(delta):
 	if tune_1_play == true and hell_tune_1.playing == false and tune_2_play == false:
@@ -48,7 +53,7 @@ func _physics_process(delta):
 		camera.position.y += 2
 	if start == 3:
 		heaven_man.rotation -= 0.02
-	if start ==4:
+	if start == 4:
 		camera.position.y += 2
 	if start == 5:
 		hell_biker.position.x -= 5
@@ -66,6 +71,7 @@ func _on_rotation_timer_timeout():
 	second_timer.start()
 	bike_timer.start()
 	bike_timer_2.start()
+	sight_timer.start()
 
 func _on_second_timer_timeout():
 	start = 5
@@ -97,3 +103,15 @@ func _on_timer_timeout():
 func _on_tune_timer_timeout():
 	hell_tune_1.play()
 	tune_1_play = true
+
+func _on_sight_timer_timeout():
+	match sights:
+		1:
+			sight_line_1.visible = true
+		2:
+			sight_line_2.visible = true
+		3:
+			sight_line_3.visible = true
+		4:
+			sight_timer.stop()
+	sights += 1
