@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://pauin7ou8ls0"]
+[gd_scene load_steps=19 format=3 uid="uid://pauin7ou8ls0"]
 
 [ext_resource type="Script" path="res://Scripts/omni_testing.gd" id="1_jdgsa"]
 [ext_resource type="FontFile" uid="uid://wrhjvjqaotxp" path="res://Assets/kenney_kenney-fonts/Fonts/Kenney High.ttf" id="1_nur6c"]
@@ -14,7 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://411hggfbu85k" path="res://Assets/kenney_pixel-vehicle-pack/PNG/Characters/heaven_man.png" id="6_vhvum"]
 [ext_resource type="Texture2D" uid="uid://d3sxeq0grudgd" path="res://Assets/kenney_pixel-vehicle-pack/PNG/Characters/heaven_npc.png" id="7_xre60"]
 [ext_resource type="PackedScene" uid="uid://b06wuap0825jc" path="res://Scenes/hell_biker.tscn" id="8_4wleu"]
-[ext_resource type="PackedScene" path="res://Scenes/hell_biker_2.tscn" id="11_vthi6"]
+[ext_resource type="FontFile" uid="uid://duebolnx5p3lg" path="res://Assets/kenney_kenney-fonts/Fonts/Kenney Mini Square Mono.ttf" id="9_vul8h"]
+[ext_resource type="PackedScene" uid="uid://d0bvvfksr0iwx" path="res://Scenes/hell_biker_2.tscn" id="11_vthi6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6ekr4"]
 texture = ExtResource("6_6o6ik")
@@ -1863,6 +1864,91 @@ visible = false
 z_index = 1
 position = Vector2(0, 271)
 
+[node name="Ellipsis1" type="Label" parent="Friend"]
+offset_left = 16.0
+offset_top = -38.0
+offset_right = 136.0
+offset_bottom = -15.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_vul8h")
+text = "."
+metadata/_edit_use_anchors_ = true
+
+[node name="Ellipsis2" type="Label" parent="Friend"]
+visible = false
+offset_left = 22.0
+offset_top = -38.0
+offset_right = 142.0
+offset_bottom = -15.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_vul8h")
+text = "."
+metadata/_edit_use_anchors_ = true
+
+[node name="Ellipsis3" type="Label" parent="Friend"]
+visible = false
+offset_left = 28.0
+offset_top = -38.0
+offset_right = 148.0
+offset_bottom = -15.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_vul8h")
+text = "."
+metadata/_edit_use_anchors_ = true
+
+[node name="A1" type="Label" parent="Friend"]
+visible = false
+offset_left = 34.0
+offset_top = -38.0
+offset_right = 154.0
+offset_bottom = -15.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_vul8h")
+text = "A"
+
+[node name="A2" type="Label" parent="Friend"]
+visible = false
+offset_left = 47.0
+offset_top = -43.0
+offset_right = 167.0
+offset_bottom = -20.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_vul8h")
+text = "A"
+
+[node name="A3" type="Label" parent="Friend"]
+visible = false
+offset_left = 58.0
+offset_top = -35.0
+offset_right = 178.0
+offset_bottom = -12.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_vul8h")
+text = "A"
+
+[node name="H" type="Label" parent="Friend"]
+visible = false
+offset_left = 79.0
+offset_top = -38.0
+offset_right = 199.0
+offset_bottom = -15.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_vul8h")
+text = "H"
+
+[node name="Exclaimation" type="Label" parent="Friend"]
+visible = false
+offset_left = 90.0
+offset_top = -38.0
+offset_right = 210.0
+offset_bottom = -15.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_vul8h")
+text = "!!!"
+
+[node name="YellTimer" type="Timer" parent="Friend"]
+wait_time = 0.5
+
 [node name="CloudGround" parent="." instance=ExtResource("5_mx5or")]
 z_index = 2
 position = Vector2(-3, 267)
@@ -1947,4 +2033,5 @@ stream = ExtResource("2_pp1km")
 [connection signal="timeout" from="Camera/BikeTimer2" to="." method="_on_bike_timer_2_timeout"]
 [connection signal="timeout" from="Camera/TuneTimer" to="." method="_on_tune_timer_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Friend/YellTimer" to="." method="_on_yell_timer_timeout"]
 [connection signal="timeout" from="HeavenNpc/SightTimer" to="." method="_on_sight_timer_timeout"]
