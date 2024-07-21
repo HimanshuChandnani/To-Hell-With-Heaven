@@ -79,13 +79,13 @@ func _physics_process(delta):
 		8:
 			heaven_s_golden_gate.skew += 0.2
 	if start == 9:
-		if camera.global_position.x < $Rykting/Player.global_position.x:
+		if camera.global_position.x < $Rykting/Player.global_position.x+2:
 			camera.global_position.x += 2
-		if camera.global_position.x > $Rykting/Player.global_position.x:
+		if camera.global_position.x > $Rykting/Player.global_position.x-2:
 			camera.global_position.x -= 2
-		if camera.global_position.y < $Rykting/Player.global_position.y:
+		if camera.global_position.y < $Rykting/Player.global_position.y+2:
 			camera.global_position.y += 2
-		if camera.global_position.y > $Rykting/Player.global_position.y:
+		if camera.global_position.y > $Rykting/Player.global_position.y-2:
 			camera.global_position.y -= 2
 
 func _on_first_timer_timeout():
