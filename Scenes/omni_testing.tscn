@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://pauin7ou8ls0"]
+[gd_scene load_steps=41 format=3 uid="uid://pauin7ou8ls0"]
 
 [ext_resource type="Script" path="res://Scripts/omni_testing.gd" id="1_jdgsa"]
 [ext_resource type="FontFile" uid="uid://wrhjvjqaotxp" path="res://Assets/kenney_kenney-fonts/Fonts/Kenney High.ttf" id="1_nur6c"]
@@ -5682,6 +5682,7 @@ shape = SubResource("RectangleShape2D_lr7ce")
 
 [node name="HellBiker3" parent="." instance=ExtResource("23_eooi8")]
 position = Vector2(915, 1423)
+
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(903, 1375)
 
