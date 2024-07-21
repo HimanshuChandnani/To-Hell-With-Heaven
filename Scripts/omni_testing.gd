@@ -4,7 +4,6 @@ extends Node2D
 @onready var subtitle = $Subtitle
 @onready var first_timer = $Camera/FirstTimer
 @onready var camera = $Camera
-@onready var heaven_man = $HeavenMan
 @onready var rotation_timer = $Camera/RotationTimer
 @onready var second_timer = $Camera/SecondTimer
 @onready var friend = $Friend
@@ -39,6 +38,7 @@ extends Node2D
 @onready var exclaimation = $"Friend/Exclaimation"
 @onready var heaven_s_golden_gate = $"Heaven's Golden Gate"
 @onready var gate_timer = $"Heaven's Golden Gate/GateTimer"
+@onready var heaven_man = $Rykting
 
 var start = 1
 var tune_1_play = false
@@ -75,6 +75,8 @@ func _physics_process(delta):
 			camera.position.y -= 10
 		8:
 			heaven_s_golden_gate.skew += 0.2
+		9:
+			$Rykting/Player.on = 1
 
 func _on_first_timer_timeout():
 	start = 3

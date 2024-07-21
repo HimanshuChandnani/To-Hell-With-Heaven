@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ddeu3ktqtwmxi"]
+[gd_scene load_steps=7 format=3 uid="uid://c1cro03s0c3gj"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_1cgkf"]
 [ext_resource type="Texture2D" uid="uid://411hggfbu85k" path="res://Assets/kenney_pixel-vehicle-pack/PNG/Characters/heaven_man.png" id="1_3n8fr"]
@@ -38,6 +38,7 @@ position = Vector2(0, -7.5)
 sprite_frames = SubResource("SpriteFrames_b1ocb")
 animation = &"idle"
 autoplay = "walk"
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -6.5)
