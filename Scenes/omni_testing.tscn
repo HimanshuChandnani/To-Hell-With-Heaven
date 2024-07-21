@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://pauin7ou8ls0"]
+[gd_scene load_steps=22 format=3 uid="uid://pauin7ou8ls0"]
 
 [ext_resource type="Script" path="res://Scripts/omni_testing.gd" id="1_jdgsa"]
 [ext_resource type="FontFile" uid="uid://wrhjvjqaotxp" path="res://Assets/kenney_kenney-fonts/Fonts/Kenney High.ttf" id="1_nur6c"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://d0bvvfksr0iwx" path="res://Scenes/hell_biker_2.tscn" id="11_vthi6"]
 [ext_resource type="PackedScene" uid="uid://d3qhboltu1d06" path="res://Scenes/heaven's_golden_gate.tscn" id="17_hw1cr"]
 [ext_resource type="PackedScene" uid="uid://b8bvldkbxylaw" path="res://Scenes/rykting.tscn" id="18_3qvnf"]
+[ext_resource type="PackedScene" path="res://Scenes/level1.tscn" id="19_amtkx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6ekr4"]
 texture = ExtResource("6_6o6ik")
@@ -1953,7 +1954,6 @@ metadata/_edit_use_anchors_ = true
 wait_time = 0.5
 
 [node name="CloudGround" parent="." instance=ExtResource("5_mx5or")]
-z_index = 6
 position = Vector2(-3, 267)
 
 [node name="HeavenMan" type="Sprite2D" parent="."]
@@ -1966,16 +1966,16 @@ flip_h = true
 [node name="Rykting" parent="." instance=ExtResource("18_3qvnf")]
 top_level = true
 z_index = 5
-position = Vector2(19, 271)
+position = Vector2(24, 270)
 
 [node name="HeavenNpc" type="Sprite2D" parent="."]
-z_index = 2
+z_index = 10
 position = Vector2(-24, 264)
 texture = ExtResource("7_xre60")
 
 [node name="SightLine1" type="Polygon2D" parent="HeavenNpc"]
 visible = false
-z_index = 2
+z_index = 10
 position = Vector2(27, 28)
 rotation = -1.0472
 color = Color(0, 0, 0, 1)
@@ -1983,7 +1983,7 @@ polygon = PackedVector2Array(27, -5, 27, -4, 31, -4, 31, -5)
 
 [node name="SightLine2" type="Polygon2D" parent="HeavenNpc"]
 visible = false
-z_index = 2
+z_index = 10
 position = Vector2(24, 33)
 rotation = -1.0472
 color = Color(0, 0, 0, 1)
@@ -1991,7 +1991,7 @@ polygon = PackedVector2Array(27, -5, 27, -4, 31, -4, 31, -5)
 
 [node name="SightLine3" type="Polygon2D" parent="HeavenNpc"]
 visible = false
-z_index = 2
+z_index = 10
 position = Vector2(21, 38)
 rotation = -1.0472
 color = Color(0, 0, 0, 1)
@@ -2032,6 +2032,10 @@ position = Vector2(119, 271)
 [node name="GateTimer" type="Timer" parent="Heaven\'s Golden Gate"]
 wait_time = 0.1
 one_shot = true
+
+[node name="Node2D" parent="." instance=ExtResource("19_amtkx")]
+position = Vector2(283, 274)
+scale = Vector2(0.3, 0.3)
 
 [connection signal="timeout" from="Camera/FirstTimer" to="." method="_on_first_timer_timeout"]
 [connection signal="timeout" from="Camera/RotationTimer" to="." method="_on_rotation_timer_timeout"]

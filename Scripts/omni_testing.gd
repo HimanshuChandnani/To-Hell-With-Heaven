@@ -75,8 +75,8 @@ func _physics_process(delta):
 			camera.position.y -= 10
 		8:
 			heaven_s_golden_gate.skew += 0.2
-		9:
-			$Rykting/Player.on = 1
+	if start == 9:
+		camera.global_position = heaven_man.global_position
 
 func _on_first_timer_timeout():
 	start = 3
@@ -160,3 +160,4 @@ func _on_yell_timer_timeout():
 
 func _on_gate_timer_timeout():
 	start = 9
+	$Rykting/Player.on = 1
