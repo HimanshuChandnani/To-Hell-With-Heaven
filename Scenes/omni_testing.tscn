@@ -15,14 +15,14 @@
 [ext_resource type="Texture2D" uid="uid://d3sxeq0grudgd" path="res://Assets/kenney_pixel-vehicle-pack/PNG/Characters/heaven_npc.png" id="7_xre60"]
 [ext_resource type="PackedScene" uid="uid://b06wuap0825jc" path="res://Scenes/hell_biker.tscn" id="8_4wleu"]
 [ext_resource type="FontFile" uid="uid://duebolnx5p3lg" path="res://Assets/kenney_kenney-fonts/Fonts/Kenney Mini Square Mono.ttf" id="9_vul8h"]
-[ext_resource type="PackedScene" path="res://Scenes/hell_biker_2.tscn" id="11_vthi6"]
-[ext_resource type="PackedScene" path="res://Scenes/heaven's_golden_gate.tscn" id="17_hw1cr"]
+[ext_resource type="PackedScene" uid="uid://d0bvvfksr0iwx" path="res://Scenes/hell_biker_2.tscn" id="11_vthi6"]
+[ext_resource type="PackedScene" uid="uid://d3qhboltu1d06" path="res://Scenes/heaven's_golden_gate.tscn" id="17_hw1cr"]
 [ext_resource type="PackedScene" uid="uid://b8bvldkbxylaw" path="res://Scenes/rykting.tscn" id="18_3qvnf"]
 [ext_resource type="PackedScene" uid="uid://cs4ovrh05ky76" path="res://Scenes/level1.tscn" id="19_amtkx"]
 [ext_resource type="Shader" path="res://Scripts/level-shader.gdshader" id="20_h47fd"]
 [ext_resource type="PackedScene" uid="uid://blhyccf4q4tl5" path="res://Scenes/killzone.tscn" id="20_m6kp7"]
 [ext_resource type="PackedScene" uid="uid://bmsgshpu1rd4g" path="res://Scenes/startarea.tscn" id="21_rqcji"]
-[ext_resource type="PackedScene" uid="uid://21pbolq3n1y5" path="res://Scenes/hell_biker_2 new.tscn" id="23_eooi8"]
+[ext_resource type="PackedScene" path="res://Scenes/hell_biker_2 new.tscn" id="23_eooi8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6ekr4"]
 texture = ExtResource("6_6o6ik")
@@ -5550,7 +5550,7 @@ polygon = PackedVector2Array(27, -5, 27, -4, 31, -4, 31, -5)
 [node name="SightLine2" type="Polygon2D" parent="HeavenNpc"]
 visible = false
 z_index = 10
-position = Vector2(24, 33)
+position = Vector2(23, 35)
 rotation = -1.0472
 color = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(27, -5, 27, -4, 31, -4, 31, -5)
@@ -5558,7 +5558,7 @@ polygon = PackedVector2Array(27, -5, 27, -4, 31, -4, 31, -5)
 [node name="SightLine3" type="Polygon2D" parent="HeavenNpc"]
 visible = false
 z_index = 10
-position = Vector2(21, 38)
+position = Vector2(19, 42)
 rotation = -1.0472
 color = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(27, -5, 27, -4, 31, -4, 31, -5)
@@ -5655,7 +5655,7 @@ position = Vector2(804, 513)
 shape = SubResource("RectangleShape2D_2c50h")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Startarea"]
-position = Vector2(454, 398.5)
+position = Vector2(473, 398)
 shape = SubResource("RectangleShape2D_dia4m")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Startarea"]
@@ -5681,7 +5681,7 @@ position = Vector2(278.5, 322.5)
 shape = SubResource("RectangleShape2D_lr7ce")
 
 [node name="HellBiker3" parent="." instance=ExtResource("23_eooi8")]
-position = Vector2(915, 1423)
+position = Vector2(816, 1423)
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(903, 1375)
