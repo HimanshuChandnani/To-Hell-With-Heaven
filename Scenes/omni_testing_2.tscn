@@ -1,8 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://5yr15nxsxibs"]
+[gd_scene load_steps=8 format=3 uid="uid://beb8c373gelkl"]
 
 [ext_resource type="Script" path="res://Scripts/omni_testing_2.gd" id="1_fg7jx"]
 [ext_resource type="PackedScene" uid="uid://b8bvldkbxylaw" path="res://Scenes/rykting.tscn" id="1_ng0wb"]
 [ext_resource type="PackedScene" uid="uid://bpfjf0jh1lryf" path="res://Scenes/cloud_ground.tscn" id="2_a1wg7"]
+[ext_resource type="PackedScene" uid="uid://blhyccf4q4tl5" path="res://Scenes/killzone.tscn" id="4_ljehy"]
+[ext_resource type="PackedScene" uid="uid://bmsgshpu1rd4g" path="res://Scenes/startarea.tscn" id="5_tpukq"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_g1wb4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t8jde"]
+size = Vector2(120, 103)
 
 [node name="omniTesting 2" type="Node2D"]
 script = ExtResource("1_fg7jx")
@@ -15,3 +22,17 @@ position_smoothing_speed = 2.0
 [node name="Rykting" parent="." instance=ExtResource("1_ng0wb")]
 
 [node name="CloudGround" parent="." instance=ExtResource("2_a1wg7")]
+position = Vector2(-218, 3)
+
+[node name="Killzone" parent="." instance=ExtResource("4_ljehy")]
+position = Vector2(91, 22)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+shape = SubResource("WorldBoundaryShape2D_g1wb4")
+
+[node name="Startarea" parent="." instance=ExtResource("5_tpukq")]
+position = Vector2(-93, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Startarea"]
+position = Vector2(14, 8.5)
+shape = SubResource("RectangleShape2D_t8jde")
