@@ -28,12 +28,22 @@ extends Node2D
 @onready var sight_line_2 = $HeavenNpc/SightLine2
 @onready var sight_line_3 = $HeavenNpc/SightLine3
 @onready var sight_timer = $HeavenNpc/SightTimer
+@onready var yell_timer = $Friend/YellTimer
+@onready var ellipsis_1 = $Friend/Ellipsis1
+@onready var ellipsis_2 = $Friend/Ellipsis2
+@onready var ellipsis_3 = $Friend/Ellipsis3
+@onready var a_1 = $Friend/A1
+@onready var a_2 = $Friend/A2
+@onready var a_3 = $Friend/A3
+@onready var h = $Friend/H
+@onready var exclaimation = $"Friend/Exclaimation"
 
 var start = 1
 var tune_1_play = false
 var tune_2_play = false
 var enter = false
 var sights = 1
+var yells = 2
 
 func _physics_process(delta):
 	if tune_1_play == true and hell_tune_1.playing == false and tune_2_play == false:
@@ -88,6 +98,7 @@ func _on_wait_timer_timeout():
 
 func _on_third_timer_timeout():
 	start = 7
+	yell_timer.start()
 
 func _on_bike_timer_timeout():
 	bike.play()
@@ -116,3 +127,25 @@ func _on_sight_timer_timeout():
 		4:
 			sight_timer.stop()
 	sights += 1
+
+func _on_yell_timer_timeout():
+	match yells:
+		1:
+			ellipsis_1.visible = true
+		2:
+			ellipsis_2.visible = true
+		3:
+			ellipsis_3.visible = true
+		4:
+			a_1.visible = true
+		5:
+			a_2.visible = true
+		6:
+			a_3.visible = true
+		7:
+			h.visible = true
+		8:
+			exclaimation.visible = true
+		9:
+			yell_timer.stop()
+	yells += 1
