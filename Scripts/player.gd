@@ -15,23 +15,31 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("interact") and ballIsInHands == true:
 		ballIsInHands = false
 		$"../Chain/PinJoint2D7".softness = 16
-	elif Input.is_action_just_pressed("interact") and ballIsInHands == false or ballIsInHands == true:
+		$Label.visible = false
+	elif Input.is_action_just_pressed("interact") and ballIsInHands == false and position.distance_to(ball.global_position) < 10 or ballIsInHands == true:
 		ballIsInHands = true
 		ball.global_position = Vector2(position.x,position.y-5)
 		$"../Chain/PinJoint2D7".softness = 0
-		# Mouse movement
+		# Ball throw and mouse movement
 		var mousePosition = get_global_mouse_position()
-		#mousePosition.normalized()
+		#print(mousePosition)
 		#print(position.angle_to_point(mousePosition))
+		$Label.visible = true
 		$Label.rotation = position.angle_to_point(mousePosition)
-		if Input.is_action_just_pressed("left click"):
+		var temp = position.angle_to_point(mousePosition)
+		if Input.is_action_just_pressed("throw"):
 			ballIsInHands = false
+			$Label.visible = false
 			$"../Chain/PinJoint2D7".softness = 16
-			ball.apply_central_impulse(mousePosition.normalized()*10000)
-	
+			ball.apply_impulse(Vector2(cos(temp),sin(temp))*10000)
+	if position.distance_to(ball.global_position) < 10:
+		$"../Chain/Label".visible = true
+		$"../Chain/Label".global_position = Vector2(ball.global_position.x,ball.global_position.y-7)
+	else:
+		$"../Chain/Label".visible = false
 	# Slow down
 	var slow = 1
-	if position.distance_to(ball.global_position) > 25:
+	if position.distance_to(ball.global_position) > 25 or ballIsInHands:
 		slow = 2
 	# Add the gravity.
 	if not is_on_floor():
@@ -57,5 +65,12 @@ func _physics_process(delta):
 		$Sprite2D.play('idle')
 	else:
 		$Sprite2D.play('walk')
-		
+	
+	# Get pulled towards ball
+	if position.distance_to(ball.global_position) > 37:
+		velocity = position.direction_to(ball.global_position) * SPEED 
+	# Pull yourself
+	if Input.is_action_pressed("pull") and position.distance_to(ball.global_position) > 10:
+		velocity = position.direction_to(ball.global_position) * SPEED * 2
+	
 	move_and_slide()

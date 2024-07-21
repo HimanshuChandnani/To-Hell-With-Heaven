@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b8bvldkbxylaw"]
+[gd_scene load_steps=8 format=3 uid="uid://b8bvldkbxylaw"]
 
 [ext_resource type="PackedScene" uid="uid://ddeu3ktqtwmxi" path="res://Scenes/player.tscn" id="1_plg27"]
 [ext_resource type="Texture2D" uid="uid://r3hqbfltc1vh" path="res://Assets/kenney_1-bit-input-prompts-pixel-16/Tiles (Black)/tile_0390.png" id="2_rs2x0"]
@@ -7,6 +7,11 @@
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_a60oo"]
 distance = 6.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_icdev"]
+font_size = 18
+outline_color = Color(0, 0, 0, 1)
+shadow_color = Color(0, 0, 0, 0.313726)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4qbv6"]
 radius = 3.0
@@ -22,6 +27,7 @@ drag_vertical_enabled = true
 drag_top_margin = 1.0
 
 [node name="Label" type="Label" parent="Player"]
+visible = false
 offset_left = -5.0
 offset_top = -19.0
 offset_right = 21.0
@@ -35,7 +41,7 @@ collision_layer = 7
 collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, 8)
+position = Vector2(0, 12)
 shape = SubResource("WorldBoundaryShape2D_a60oo")
 
 [node name="Polygon2D" type="Polygon2D" parent="StaticBody2D"]
@@ -51,6 +57,17 @@ angular_limit_upper = 0.523599
 [node name="Chain" type="Node2D" parent="."]
 position = Vector2(0, -2)
 rotation = 1.5708
+
+[node name="Label" type="Label" parent="Chain"]
+z_index = 2
+offset_left = -14.0
+offset_top = -10.9999
+offset_right = 6.99996
+offset_bottom = 15.0001
+rotation = -1.56996
+scale = Vector2(0.250928, 0.223243)
+text = "E"
+label_settings = SubResource("LabelSettings_icdev")
 
 [node name="Ball" type="RigidBody2D" parent="Chain"]
 position = Vector2(-5, 1.00002)
