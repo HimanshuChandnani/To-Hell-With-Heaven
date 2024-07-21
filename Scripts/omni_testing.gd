@@ -171,3 +171,4 @@ func _on_yell_timer_timeout():
 func _on_gate_timer_timeout():
 	start = 9
 	$Rykting/Player.on = 1
+	$Rykting/Player.velocity.x = 500
