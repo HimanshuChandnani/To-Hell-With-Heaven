@@ -4,11 +4,11 @@ extends Node2D
 @onready var camera = $Camera
 
 func _physics_process(delta):
-	if camera.global_position.x < rykting.global_position.x:
+	if camera.global_position.x < rykting.global_position.x+2:
 		camera.global_position.x += 2
-	if camera.global_position.x > rykting.global_position.x:
+	if camera.global_position.x > rykting.global_position.x-2:
 		camera.global_position.x -= 2
-	if camera.global_position.y < rykting.global_position.y:
+	if camera.global_position.y < rykting.global_position.y+2:
 		camera.global_position.y += 2
-	if camera.global_position.y > rykting.global_position.y:
+	if camera.global_position.y > rykting.global_position.y-2:
 		camera.global_position.y -= 2
