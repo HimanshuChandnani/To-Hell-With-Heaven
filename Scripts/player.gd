@@ -73,7 +73,7 @@ func _physics_process(delta):
 			$Sprite2D.play('walk')
 		
 		# Get pulled towards ball
-		if global_position.distance_to(ball.global_position) > 37:
+		if global_position.distance_to(ball.global_position) > 37 and global_position.y < ball.global_position.y:
 			velocity = global_position.direction_to(ball.global_position) * SPEED 
 		# Pull yourself
 		if Input.is_action_pressed("pull") and global_position.distance_to(ball.global_position) > 10:

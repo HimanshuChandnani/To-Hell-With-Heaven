@@ -15,8 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://d3sxeq0grudgd" path="res://Assets/kenney_pixel-vehicle-pack/PNG/Characters/heaven_npc.png" id="7_xre60"]
 [ext_resource type="PackedScene" uid="uid://b06wuap0825jc" path="res://Scenes/hell_biker.tscn" id="8_4wleu"]
 [ext_resource type="FontFile" uid="uid://duebolnx5p3lg" path="res://Assets/kenney_kenney-fonts/Fonts/Kenney Mini Square Mono.ttf" id="9_vul8h"]
-[ext_resource type="PackedScene" uid="uid://d0bvvfksr0iwx" path="res://Scenes/hell_biker_2.tscn" id="11_vthi6"]
-[ext_resource type="PackedScene" uid="uid://d3qhboltu1d06" path="res://Scenes/heaven's_golden_gate.tscn" id="17_hw1cr"]
+[ext_resource type="PackedScene" path="res://Scenes/hell_biker_2.tscn" id="11_vthi6"]
+[ext_resource type="PackedScene" path="res://Scenes/heaven's_golden_gate.tscn" id="17_hw1cr"]
 [ext_resource type="PackedScene" uid="uid://b8bvldkbxylaw" path="res://Scenes/rykting.tscn" id="18_3qvnf"]
 [ext_resource type="PackedScene" uid="uid://cs4ovrh05ky76" path="res://Scenes/level1.tscn" id="19_amtkx"]
 
