@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://pauin7ou8ls0"]
+[gd_scene load_steps=35 format=3 uid="uid://pauin7ou8ls0"]
 
 [ext_resource type="Script" path="res://Scripts/omni_testing.gd" id="1_jdgsa"]
 [ext_resource type="FontFile" uid="uid://wrhjvjqaotxp" path="res://Assets/kenney_kenney-fonts/Fonts/Kenney High.ttf" id="1_nur6c"]
@@ -15,12 +15,13 @@
 [ext_resource type="Texture2D" uid="uid://d3sxeq0grudgd" path="res://Assets/kenney_pixel-vehicle-pack/PNG/Characters/heaven_npc.png" id="7_xre60"]
 [ext_resource type="PackedScene" uid="uid://b06wuap0825jc" path="res://Scenes/hell_biker.tscn" id="8_4wleu"]
 [ext_resource type="FontFile" uid="uid://duebolnx5p3lg" path="res://Assets/kenney_kenney-fonts/Fonts/Kenney Mini Square Mono.ttf" id="9_vul8h"]
-[ext_resource type="PackedScene" uid="uid://d0bvvfksr0iwx" path="res://Scenes/hell_biker_2.tscn" id="11_vthi6"]
-[ext_resource type="PackedScene" uid="uid://d3qhboltu1d06" path="res://Scenes/heaven's_golden_gate.tscn" id="17_hw1cr"]
+[ext_resource type="PackedScene" path="res://Scenes/hell_biker_2.tscn" id="11_vthi6"]
+[ext_resource type="PackedScene" path="res://Scenes/heaven's_golden_gate.tscn" id="17_hw1cr"]
 [ext_resource type="PackedScene" uid="uid://b8bvldkbxylaw" path="res://Scenes/rykting.tscn" id="18_3qvnf"]
 [ext_resource type="PackedScene" uid="uid://cs4ovrh05ky76" path="res://Scenes/level1.tscn" id="19_amtkx"]
-[ext_resource type="PackedScene" uid="uid://blhyccf4q4tl5" path="res://Scenes/killzone.tscn" id="20_m6kp7"]
-[ext_resource type="PackedScene" uid="uid://bmsgshpu1rd4g" path="res://Scenes/startarea.tscn" id="21_rqcji"]
+[ext_resource type="Shader" path="res://Scripts/level-shader.gdshader" id="20_h47fd"]
+[ext_resource type="PackedScene" path="res://Scenes/killzone.tscn" id="20_m6kp7"]
+[ext_resource type="PackedScene" path="res://Scenes/startarea.tscn" id="21_rqcji"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6ekr4"]
 texture = ExtResource("6_6o6ik")
@@ -5266,17 +5267,35 @@ physics_layer_0/collision_layer = 3
 physics_layer_0/collision_mask = 3
 sources/0 = SubResource("TileSetAtlasSource_6ekr4")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wwaj5"]
+shader = ExtResource("20_h47fd")
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oupaa"]
 size = Vector2(572, 18)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3p5ub"]
 size = Vector2(691, 18)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fjt7o"]
+size = Vector2(14.5, 6.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nsin8"]
+size = Vector2(633, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q1gmh"]
+size = Vector2(72, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fmosf"]
+size = Vector2(266, 9)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l25di"]
 size = Vector2(20, 217)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2c50h"]
 size = Vector2(7, 78)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xl32p"]
+size = Vector2(10, 76.875)
 
 [node name="omniTesting" type="Node2D"]
 script = ExtResource("1_jdgsa")
@@ -5559,6 +5578,7 @@ wait_time = 0.12
 one_shot = true
 
 [node name="Node2D" parent="." instance=ExtResource("19_amtkx")]
+material = SubResource("ShaderMaterial_wwaj5")
 position = Vector2(283, 274)
 scale = Vector2(0.3, 0.3)
 
@@ -5573,6 +5593,34 @@ shape = SubResource("RectangleShape2D_oupaa")
 position = Vector2(301.5, 671)
 shape = SubResource("RectangleShape2D_3p5ub")
 
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(618, 984)
+shape = SubResource("RectangleShape2D_fjt7o")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(579, 984)
+shape = SubResource("RectangleShape2D_fjt7o")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(694.25, 985)
+shape = SubResource("RectangleShape2D_fjt7o")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(656, 984)
+shape = SubResource("RectangleShape2D_fjt7o")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(223.5, 1112.5)
+shape = SubResource("RectangleShape2D_nsin8")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(493, 850)
+shape = SubResource("RectangleShape2D_q1gmh")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(50, 531.5)
+shape = SubResource("RectangleShape2D_fmosf")
+
 [node name="Startarea" parent="." instance=ExtResource("21_rqcji")]
 position = Vector2(204, 203)
 
@@ -5583,6 +5631,10 @@ shape = SubResource("RectangleShape2D_l25di")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Startarea"]
 position = Vector2(804, 513)
 shape = SubResource("RectangleShape2D_2c50h")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Startarea"]
+position = Vector2(84, 935)
+shape = SubResource("RectangleShape2D_xl32p")
 
 [connection signal="timeout" from="Camera/FirstTimer" to="." method="_on_first_timer_timeout"]
 [connection signal="timeout" from="Camera/RotationTimer" to="." method="_on_rotation_timer_timeout"]

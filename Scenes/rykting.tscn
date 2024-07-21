@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://b8bvldkbxylaw"]
 
-[ext_resource type="PackedScene" uid="uid://c1cro03s0c3gj" path="res://Scenes/player.tscn" id="1_plg27"]
+[ext_resource type="PackedScene" uid="uid://ddeu3ktqtwmxi" path="res://Scenes/player.tscn" id="1_plg27"]
 [ext_resource type="Texture2D" uid="uid://r3hqbfltc1vh" path="res://Assets/kenney_1-bit-input-prompts-pixel-16/Tiles (Black)/tile_0390.png" id="2_rs2x0"]
 [ext_resource type="PackedScene" uid="uid://cu8v53ma32qed" path="res://Scenes/chain_segment.tscn" id="5_hdfvp"]
 
@@ -19,7 +19,6 @@ radius = 3.0
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(4, 4)
 position_smoothing_speed = 30.0
-drag_vertical_enabled = true
 drag_top_margin = 1.0
 
 [node name="Label" type="Label" parent="Player"]
