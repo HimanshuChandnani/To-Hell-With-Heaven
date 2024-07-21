@@ -1,8 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://bpfjf0jh1lryf"]
+[gd_scene load_steps=3 format=3 uid="uid://bpfjf0jh1lryf"]
 
 [ext_resource type="Texture2D" uid="uid://cnfunrdn0kaml" path="res://Assets/kenney_background-elements/Spritesheet/clouds2.png" id="1_tayfv"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_125al"]
+size = Vector2(540, 3)
+
 [node name="CloudGround" type="Node2D"]
+z_index = 11
 
 [node name="Clouds2" type="Sprite2D" parent="."]
 position = Vector2(0, 3.1)
@@ -70,39 +74,6 @@ scale = Vector2(0.03, 0.03)
 texture = ExtResource("1_tayfv")
 flip_h = true
 
-[node name="Clouds14" type="Sprite2D" parent="."]
-position = Vector2(360, 3.1)
-scale = Vector2(0.03, 0.03)
-texture = ExtResource("1_tayfv")
-
-[node name="Clouds15" type="Sprite2D" parent="."]
-position = Vector2(390, 3.1)
-scale = Vector2(0.03, 0.03)
-texture = ExtResource("1_tayfv")
-flip_h = true
-
-[node name="Clouds16" type="Sprite2D" parent="."]
-position = Vector2(300.015, 3.1)
-scale = Vector2(0.03, 0.03)
-texture = ExtResource("1_tayfv")
-
-[node name="Clouds17" type="Sprite2D" parent="."]
-position = Vector2(330.015, 3.1)
-scale = Vector2(0.03, 0.03)
-texture = ExtResource("1_tayfv")
-flip_h = true
-
-[node name="Clouds18" type="Sprite2D" parent="."]
-position = Vector2(420.015, 3.1)
-scale = Vector2(0.03, 0.03)
-texture = ExtResource("1_tayfv")
-
-[node name="Clouds19" type="Sprite2D" parent="."]
-position = Vector2(450.015, 3.1)
-scale = Vector2(0.03, 0.03)
-texture = ExtResource("1_tayfv")
-flip_h = true
-
 [node name="Clouds20" type="Sprite2D" parent="."]
 position = Vector2(180, 3.1)
 scale = Vector2(0.03, 0.03)
@@ -135,3 +106,11 @@ position = Vector2(270.015, 3.1)
 scale = Vector2(0.03, 0.03)
 texture = ExtResource("1_tayfv")
 flip_h = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(15, 5.5)
+shape = SubResource("RectangleShape2D_125al")
