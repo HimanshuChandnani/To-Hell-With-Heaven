@@ -10,7 +10,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var ballIsInHands = false
 @onready var ball = $"../Chain/Ball"
 
-var on = 0
+var on = 1
 
 func _physics_process(delta):
 	if on:

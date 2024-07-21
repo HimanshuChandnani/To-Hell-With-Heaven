@@ -47,6 +47,9 @@ var enter = false
 var sights = 1
 var yells = 2
 
+func _ready():
+	$Rykting/Player.on = 0
+
 func _physics_process(delta):
 	if tune_1_play == true and hell_tune_1.playing == false and tune_2_play == false:
 		hell_tune_2.play()
@@ -76,7 +79,14 @@ func _physics_process(delta):
 		8:
 			heaven_s_golden_gate.skew += 0.2
 	if start == 9:
-		camera.global_position = heaven_man.global_position
+		if camera.global_position.x < $Rykting/Player.global_position.x:
+			camera.global_position.x += 2
+		if camera.global_position.x > $Rykting/Player.global_position.x:
+			camera.global_position.x -= 2
+		if camera.global_position.y < $Rykting/Player.global_position.y:
+			camera.global_position.y += 2
+		if camera.global_position.y > $Rykting/Player.global_position.y:
+			camera.global_position.y -= 2
 
 func _on_first_timer_timeout():
 	start = 3
